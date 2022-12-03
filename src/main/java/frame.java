@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import com.example.demo.DemoApplication;
+import org.springframework.boot.SpringApplication;
 
 public class frame extends JFrame {
     private JPanel mainFrame;
@@ -67,7 +69,9 @@ public class frame extends JFrame {
     }
 
     public static void main(String[] args){
+
         JFrame window = new frame();
+        SpringApplication.run(DemoApplication.class, args);
     }
 
 //    private void createUIComponents() {
