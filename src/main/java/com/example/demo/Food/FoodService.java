@@ -19,7 +19,9 @@ public class FoodService {
     private static final String INGREDIENT_ID_URL = "https://api.spoonacular.com/food/ingredients/search?";
     private static final String RECIPE_STEPS_URL = "https://api.spoonacular.com/recipes/";
     private static final String RECIPE_SEARCH_URL = "https://api.spoonacular.com/recipes/complexSearch?";
-    private static final String API_KEY = "apiKey=75ea5da8b94e4d0f839c3c3767c9d791";
+//    apiKey=75ea5da8b94e4d0f839c3c3767c9d791
+    private static final String API_KEY = "apiKey=bade76f63b1d4353bce85c63ca404348";
+
     private final RestTemplate restTemplate = new RestTemplate();
 
     public String getIngredient(String food) {
@@ -47,8 +49,8 @@ public class FoodService {
         }
         return ingredientInformation;
     }
-    public Recipe getRecipe(String food){
-        String jsonRecipeSearch = restTemplate.getForObject(RECIPE_SEARCH_URL + API_KEY + "&query={food}&&number=2", String.class, food );
+    public RecipeResponse getRecipe(String food, String number){
+        String jsonRecipeSearch = restTemplate.getForObject(RECIPE_SEARCH_URL + API_KEY + "&query={food}&&number={number}", String.class, food, number );
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         RecipeResponse response = new RecipeResponse();
@@ -57,26 +59,27 @@ public class FoodService {
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
-        return response.getResults().get(0);
+        return response;
     }
 
 
-    public RecipeSteps getRecipeSteps(Recipe recipe){
-        String jsonRecipeSteps = restTemplate.getForObject(RECIPE_STEPS_URL + "{id}/analyzedInstructions?" + API_KEY, String.class, recipe.getId().toString() );
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        ArrayList<RecipeSteps> response;
-        try {
-            response = objectMapper.readValue(jsonRecipeSteps, new TypeReference<>() {
-            });
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+    public void getRecipeSteps(RecipeResponse recipes) {
+        for (Recipe recipe : recipes.getResults()) {
+            String jsonRecipeSteps = restTemplate.getForObject(RECIPE_STEPS_URL + "{id}/analyzedInstructions?" + API_KEY, String.class, recipe.getRecipe_id().toString());
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            ArrayList<RecipeSteps> response;
+            try {
+                response = objectMapper.readValue(jsonRecipeSteps, new TypeReference<>() {
+                });
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
+            for (var step : response.get(0).getSteps()) {
+                step.setRecipeId(recipe.getRecipe_id());
+            }
+            recipe.setSteps(response.get(0).getSteps());
         }
-        for(var step : response.get(0).getSteps()){
-            step.setRecipeId(recipe.getId());
-        }
-        recipe.setSteps(response.get(0).getSteps());
-        return response.get(0);
     }
 
 }

@@ -1,17 +1,21 @@
 package com.example.demo.Food.recipe;
 
 import com.example.demo.Food.recipe.steps.Step;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 
 public class Recipe {
-    private Integer id;
-    private String title;
-    private String image;
+    @JsonProperty("id")
+    private Integer recipe_id;
+    @JsonProperty("title")
+    private String name;
+    @JsonProperty("image")
+    private String image_url;
     private ArrayList<Step> steps;
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setRecipe_id(Integer recipe_id) {
+        this.recipe_id = recipe_id;
     }
 
     public ArrayList<Step> getSteps() {
@@ -23,32 +27,32 @@ public class Recipe {
     }
 
     public Recipe(int id, String title, String image, ArrayList<Step> steps) {
-        this.id = id;
-        this.title = title;
-        this.image = image;
+        this.recipe_id = id;
+        this.name = title;
+        this.image_url = image;
         this.steps = steps;
     }
     public Recipe(){
 
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getRecipe_id() {
+        return recipe_id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getImage() {
-        return image;
+    public String getImage_url() {
+        return image_url;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 }

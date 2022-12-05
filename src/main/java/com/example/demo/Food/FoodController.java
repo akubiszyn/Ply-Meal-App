@@ -2,6 +2,7 @@ package com.example.demo.Food;
 
 import com.example.demo.Food.ingredient.Ingredient;
 import com.example.demo.Food.recipe.Recipe;
+import com.example.demo.Food.recipe.RecipeResponse;
 import com.example.demo.Food.recipe.steps.RecipeSteps;
 import com.example.demo.Food.recipe.steps.Step;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,17 +22,17 @@ public class FoodController {
         Ingredient ingredient = foodService.getIngredientInformation(id);
         return ingredient;
     }
-    public Recipe getRecipe(String food) {
-        Recipe recipe = foodService.getRecipe(food);
-        RecipeSteps steps = foodService.getRecipeSteps(recipe);
-        return recipe;
+    public RecipeResponse getRecipe(String food, String number) {
+        RecipeResponse recipes = foodService.getRecipe(food, number);
+        foodService.getRecipeSteps(recipes);
+        return recipes;
     }
     public static void main(String[] args){
         FoodController foodController = new FoodController();
         Ingredient ingredient = foodController.getIngredient("pineapple");
-        Recipe recipe = foodController.getRecipe("pasta");
+        RecipeResponse recipes = foodController.getRecipe("pasta", "10");
         System.out.println(ingredient.getNutrition().getNutrients().get(4));
-        System.out.println(recipe.getSteps().get(3));
+        System.out.println(recipes.getResults().get(0).getSteps().get(3));
 
 
     }
