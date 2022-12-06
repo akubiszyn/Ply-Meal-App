@@ -12,6 +12,9 @@ public class SearchRecipe extends JFrame {
     private JPanel recipeTitlePanel;
     private JLabel tittle;
     private JPanel recipeMainFrame;
+    private JButton searchRecipeButton;
+    private JTextField enterRecipe;
+    private JList recipeList;
 
     public SearchRecipe() {
         super();
@@ -20,6 +23,17 @@ public class SearchRecipe extends JFrame {
         this.setContentPane(recipeMainFrame);
         this.setVisible(true);
 
+        searchRecipeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String pattern = enterRecipe.getText();
+                DefaultListModel model = new DefaultListModel();
+                model.addElement(pattern);
+                model.addElement("aaaaa");
+                recipeList.setModel(model);
+
+            }
+        });
     }
 
     ;
@@ -40,12 +54,12 @@ public class SearchRecipe extends JFrame {
      */
     private void $$$setupUI$$$() {
         recipeMainFrame = new JPanel();
-        recipeMainFrame.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(8, 2, new Insets(0, 0, 0, 0), -1, -1));
+        recipeMainFrame.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(5, 21, new Insets(20, 20, 20, 20), -1, -1));
         recipeMainFrame.setBackground(new Color(-15946596));
         recipeTitlePanel = new JPanel();
         recipeTitlePanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
         recipeTitlePanel.setBackground(new Color(-5570596));
-        recipeMainFrame.add(recipeTitlePanel, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        recipeMainFrame.add(recipeTitlePanel, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 21, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, 1, null, null, null, 0, false));
         tittle = new JLabel();
         tittle.setEnabled(true);
         Font tittleFont = this.$$$getFont$$$("Broadway", -1, 36, tittle.getFont());
@@ -56,21 +70,36 @@ public class SearchRecipe extends JFrame {
         tittle.setText("Search recipe");
         recipeTitlePanel.add(tittle, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
-        recipeMainFrame.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, 1, null, null, null, 0, false));
+        recipeMainFrame.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 21, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, 1, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer2 = new com.intellij.uiDesigner.core.Spacer();
-        recipeMainFrame.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(7, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        recipeMainFrame.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(4, 20, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer3 = new com.intellij.uiDesigner.core.Spacer();
-        recipeMainFrame.add(spacer3, new com.intellij.uiDesigner.core.GridConstraints(7, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer4 = new com.intellij.uiDesigner.core.Spacer();
-        recipeMainFrame.add(spacer4, new com.intellij.uiDesigner.core.GridConstraints(6, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer5 = new com.intellij.uiDesigner.core.Spacer();
-        recipeMainFrame.add(spacer5, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer6 = new com.intellij.uiDesigner.core.Spacer();
-        recipeMainFrame.add(spacer6, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer7 = new com.intellij.uiDesigner.core.Spacer();
-        recipeMainFrame.add(spacer7, new com.intellij.uiDesigner.core.GridConstraints(4, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer8 = new com.intellij.uiDesigner.core.Spacer();
-        recipeMainFrame.add(spacer8, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        recipeMainFrame.add(spacer3, new com.intellij.uiDesigner.core.GridConstraints(2, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        recipeList = new JList();
+        recipeList.setBackground(new Color(-5570596));
+        recipeList.setDoubleBuffered(true);
+        Font recipeListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, recipeList.getFont());
+        if (recipeListFont != null) recipeList.setFont(recipeListFont);
+        recipeList.setForeground(new Color(-16100280));
+        recipeList.setSelectionBackground(new Color(-9118745));
+        recipeList.setSelectionForeground(new Color(-16100280));
+        recipeMainFrame.add(recipeList, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 2, 14, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
+        searchRecipeButton = new JButton();
+        searchRecipeButton.setBackground(new Color(-9118745));
+        Font searchRecipeButtonFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, searchRecipeButton.getFont());
+        if (searchRecipeButtonFont != null) searchRecipeButton.setFont(searchRecipeButtonFont);
+        searchRecipeButton.setForeground(new Color(-16100280));
+        searchRecipeButton.setMargin(new Insets(5, 5, 5, 5));
+        searchRecipeButton.setText("Search recipe");
+        recipeMainFrame.add(searchRecipeButton, new com.intellij.uiDesigner.core.GridConstraints(2, 5, 1, 7, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        enterRecipe = new JTextField();
+        enterRecipe.setBackground(new Color(-9118745));
+        Font enterRecipeFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, enterRecipe.getFont());
+        if (enterRecipeFont != null) enterRecipe.setFont(enterRecipeFont);
+        enterRecipe.setForeground(new Color(-16100280));
+        enterRecipe.setMargin(new Insets(2, 6, 2, 6));
+        enterRecipe.setText("");
+        recipeMainFrame.add(enterRecipe, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
     }
 
     /**
@@ -101,4 +130,5 @@ public class SearchRecipe extends JFrame {
     public JComponent $$$getRootComponent$$$() {
         return recipeMainFrame;
     }
+
 }
