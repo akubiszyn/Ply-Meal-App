@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@SpringBootApplication
+
 public class InsertRecipes implements CommandLineRunner {
         @Autowired
         private JdbcTemplate jdbcTemplate;
@@ -23,20 +23,15 @@ public class InsertRecipes implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        jdbcTemplate.update("delete from recipe_step");
         FoodController foodController = new FoodController();
         ArrayList<RecipeResponse> recipes = new ArrayList<>();
-//        , "dumplings", "burger", "tofu", "chicken", "pancakes", "salad", "cake", "soup", "pie"
-        ArrayList<String> foods = new ArrayList<String>(Arrays.asList("pasta"));
+        ArrayList<String> foods = new ArrayList<String>(Arrays.asList("pasta", "dumplings", "burger", "tofu", "chicken", "pancakes", "salad", "cake", "soup", "pie"));
         int idx = 0;
         int step_id = 1;
         for (String food : foods) {
-            recipes.add(foodController.getRecipe(food, "4"));
+            recipes.add(foodController.getRecipe(food, "5"));
             for (Recipe recipe : recipes.get(idx).getResults()) {
-//                if (recipe == recipes.get(idx).getResults().get(0)){
-//                    continue;
-//                }
-//                jdbcTemplate.update("INSERT INTO recipe VALUES (?, ?, ?)", recipe.getRecipe_id(), recipe.getName(), recipe.getImage_url());
+                jdbcTemplate.update("INSERT INTO recipe VALUES (?, ?, ?)", recipe.getRecipe_id(), recipe.getName(), recipe.getImage_url());
                 for (Step step : recipe.getSteps()) {
                     jdbcTemplate.update("INSERT INTO recipe_step VALUES (?, ?, ?, ?)", step_id, step.getNumber(), step.getStep(), step.getRecipeId());
                     step_id++;
@@ -44,9 +39,11 @@ public class InsertRecipes implements CommandLineRunner {
             }
             idx++;
         }
+
     }
     public static void main(String[] args){
-        SpringApplication.run(InsertRecipes.class, args);
+//        SpringApplication.run(InsertRecipes.class, args);
+
     }
 
 }

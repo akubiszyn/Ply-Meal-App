@@ -21,11 +21,11 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception{
-		String sql = "INSERT INTO recipe VALUES (878, 3, 'Spelnia oczekiania')";
-		jdbcTemplate.update(sql);
-//		String sql = "SELECT * FROM grades";
-//		List<Grades> grades = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Grades.class));
-//		grades.forEach(System.out :: println);
+//		String sql = "INSERT INTO recipe VALUES (878, 3, 'Spelnia oczekiania')";
+//		jdbcTemplate.update(sql);
+		String sql = "SELECT * FROM grades";
+		List<Grades> grades = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Grades.class));
+		grades.forEach(System.out :: println);
 	}
 
 }

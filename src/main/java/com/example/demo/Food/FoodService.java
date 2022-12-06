@@ -20,7 +20,7 @@ public class FoodService {
     private static final String RECIPE_STEPS_URL = "https://api.spoonacular.com/recipes/";
     private static final String RECIPE_SEARCH_URL = "https://api.spoonacular.com/recipes/complexSearch?";
 //    apiKey=75ea5da8b94e4d0f839c3c3767c9d791
-    private static final String API_KEY = "apiKey=bade76f63b1d4353bce85c63ca404348";
+    private static final String API_KEY = "apiKey=75ea5da8b94e4d0f839c3c3767c9d791";
 
     private final RestTemplate restTemplate = new RestTemplate();
 
