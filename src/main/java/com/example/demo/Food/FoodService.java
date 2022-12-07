@@ -20,7 +20,8 @@ public class FoodService {
     private static final String RECIPE_STEPS_URL = "https://api.spoonacular.com/recipes/";
     private static final String RECIPE_SEARCH_URL = "https://api.spoonacular.com/recipes/complexSearch?";
 //    apiKey=75ea5da8b94e4d0f839c3c3767c9d791
-    private static final String API_KEY = "apiKey=75ea5da8b94e4d0f839c3c3767c9d791";
+//    b32dcd69c8324e7c96de4e04aeecd7ea
+    private static final String API_KEY = "apiKey=b32dcd69c8324e7c96de4e04aeecd7ea";
 
     private final RestTemplate restTemplate = new RestTemplate();
 
@@ -37,9 +38,9 @@ public class FoodService {
         return response.getResults().get(0).getId();
     }
 
-    public Ingredient getIngredientInformation(String id){
+    public Ingredient getIngredientInformation(String id, String amount, String unit){
         Ingredient ingredientInformation;
-        String jsonIngredient = restTemplate.getForObject(INGREDIENT_URL + "{id}/information?amount=1&" + API_KEY, String.class, id );
+        String jsonIngredient = restTemplate.getForObject(INGREDIENT_URL + "{id}/information?amount={amount}&unit={unit}&" + API_KEY, String.class, id, amount, unit );
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         try {

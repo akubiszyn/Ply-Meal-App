@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Nutrients {
     private String name;
-    private int amount;
+    private Integer amount;
     private String unit;
     private int percentOfDailyNeeds;
 
@@ -25,7 +25,7 @@ public class Nutrients {
         this.name = name;
     }
 
-    public int getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
