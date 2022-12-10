@@ -1,6 +1,7 @@
 package com.example.demo.Food;
 
 import com.example.demo.Food.ingredient.Ingredient;
+import com.example.demo.Food.ingredient_id.IngredientId;
 import com.example.demo.Food.recipe.Recipe;
 import com.example.demo.Food.recipe.RecipeResponse;
 import com.example.demo.Food.recipe.steps.RecipeSteps;
@@ -18,8 +19,9 @@ public class FoodController {
     }
 
     public Ingredient getIngredient(String food, String amount, String unit){
-        String id = foodService.getIngredient(food);
-        Ingredient ingredient = foodService.getIngredientInformation(id, amount, unit);
+        IngredientId ingredientId = foodService.getIngredient(food);
+        Ingredient ingredient = foodService.getIngredientInformation(ingredientId.getId(), amount, unit);
+        ingredient.setName(ingredientId.getName());
         return ingredient;
     }
     public RecipeResponse getRecipe(String food, String number) {
@@ -28,8 +30,8 @@ public class FoodController {
         return recipes;
     }
     public static void main(String[] args){
-//        FoodController foodController = new FoodController();
-//        Ingredient ingredient = foodController.getIngredient("pineapple", "100", "gram");
+        FoodController foodController = new FoodController();
+        Ingredient ingredient = foodController.getIngredient("orange", "100", "gram");
 //        RecipeResponse recipes = foodController.getRecipe("pasta", "10");
 //        ingredient.getNutrition().getNutrients().forEach(nutrient ->System.out.println(nutrient.getName() + ": " + nutrient.getAmount()));
 //        System.out.println(recipes.getResults().get(0).getSteps().get(3));

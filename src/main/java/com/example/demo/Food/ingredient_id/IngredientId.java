@@ -5,6 +5,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class IngredientId {
     @JsonProperty("id")
     private String id;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public IngredientId(String id) {
         this.id = id;

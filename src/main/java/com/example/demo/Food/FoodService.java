@@ -1,5 +1,6 @@
 package com.example.demo.Food;
 import com.example.demo.Food.ingredient.Ingredient;
+import com.example.demo.Food.ingredient_id.IngredientId;
 import com.example.demo.Food.ingredient_id.IngredientResponse;
 import com.example.demo.Food.recipe.Recipe;
 import com.example.demo.Food.recipe.RecipeResponse;
@@ -25,7 +26,7 @@ public class FoodService {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    public String getIngredient(String food) {
+    public IngredientId getIngredient(String food) {
         String jsonId = restTemplate.getForObject(INGREDIENT_ID_URL + API_KEY + "&query={food}&number=1", String.class, food);
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -35,7 +36,7 @@ public class FoodService {
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
-        return response.getResults().get(0).getId();
+        return response.getResults().get(0);
     }
 
     public Ingredient getIngredientInformation(String id, String amount, String unit){
