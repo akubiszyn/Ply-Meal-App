@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="pap-project" />
         <module name="demo" />
+        <module name="pap_do_oddania" />
       </profile>
     </annotationProcessing>
   </component>
@@ -15,6 +16,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="demo" options="-parameters" />
       <module name="pap-project" options="-parameters" />
+      <module name="pap_do_oddania" options="-parameters" />
     </option>
   </component>
 </project>
