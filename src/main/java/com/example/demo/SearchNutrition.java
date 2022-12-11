@@ -17,10 +17,8 @@ public class SearchNutrition extends JFrame {
     private JLabel searchNutritionTitle;
     private JTextField product;
     private JTextField amount;
-    private JTextArea typeAmountTextArea;
     private JButton buttonOK;
     private JLabel nutritionsLabel;
-    private JTextArea typeProductTextArea;
 
     public SearchNutrition() {
         super();
@@ -37,7 +35,7 @@ public class SearchNutrition extends JFrame {
                 String strAmount = amount.getText();
                 FoodController foodController = new FoodController();
                 Ingredient ingredient = foodController.getIngredient(food, strAmount, "gram");
-                String finalText = ingredient.getName();
+                String finalText = ingredient.getName() + ": ";
                 ArrayList<Nutrients> nutrientsList = ingredient.getNutrition().getNutrients();
                 for (Nutrients nutrient : nutrientsList) {
                     if (nutrient.getName().matches("Calories|Fat|Carbohydrates|Protein")) {
@@ -69,49 +67,42 @@ public class SearchNutrition extends JFrame {
      */
     private void $$$setupUI$$$() {
         nutritionMainFrame = new JPanel();
-        nutritionMainFrame.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(7, 6, new Insets(0, 0, 0, 0), -1, -1));
+        nutritionMainFrame.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(13, 7, new Insets(0, 0, 0, 0), -1, -1));
         nutritionMainFrame.setBackground(new Color(-15946596));
         nutritionMainFrame.setForeground(new Color(-16777216));
         nutritionMainFrame.setMinimumSize(new Dimension(212, 300));
-        product = new JTextField();
-        product.setBackground(new Color(-4473925));
-        nutritionMainFrame.add(product, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, -1), null, 0, false));
         searchNutritionTitle = new JLabel();
         searchNutritionTitle.setBackground(new Color(-5570596));
         searchNutritionTitle.setForeground(new Color(-16777216));
-        searchNutritionTitle.setText("Search Nutrients for a products");
-        nutritionMainFrame.add(searchNutritionTitle, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 6, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, 48), null, 0, false));
+        searchNutritionTitle.setText("Search Nutrients for a product");
+        nutritionMainFrame.add(searchNutritionTitle, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, 48), null, 0, false));
+        final JLabel label1 = new JLabel();
+        label1.setForeground(new Color(-16777216));
+        label1.setText("Type product...");
+        nutritionMainFrame.add(label1, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
+        nutritionMainFrame.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(11, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        product = new JTextField();
+        product.setBackground(new Color(-4473925));
+        nutritionMainFrame.add(product, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 2, 6, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, -1), null, 0, false));
+        final JLabel label2 = new JLabel();
+        label2.setForeground(new Color(-16777216));
+        label2.setText("Type amount...(gram)");
+        nutritionMainFrame.add(label2, new com.intellij.uiDesigner.core.GridConstraints(4, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         amount = new JTextField();
         amount.setBackground(new Color(-4473925));
-        nutritionMainFrame.add(amount, new com.intellij.uiDesigner.core.GridConstraints(4, 0, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        nutritionMainFrame.add(amount, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 6, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, -1), null, 0, false));
         buttonOK = new JButton();
         buttonOK.setBackground(new Color(-5570596));
         buttonOK.setLabel("OK");
         buttonOK.setText("OK");
-        nutritionMainFrame.add(buttonOK, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        typeProductTextArea = new JTextArea();
-        typeProductTextArea.setBackground(new Color(-5570596));
-        typeProductTextArea.setCaretColor(new Color(-16777216));
-        typeProductTextArea.setDisabledTextColor(new Color(-16777216));
-        typeProductTextArea.setForeground(new Color(-16777216));
-        typeProductTextArea.setText("Type product...");
-        nutritionMainFrame.add(typeProductTextArea, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, 51), null, 0, false));
-        typeAmountTextArea = new JTextArea();
-        typeAmountTextArea.setBackground(new Color(-5570596));
-        typeAmountTextArea.setCaretColor(new Color(-16777216));
-        typeAmountTextArea.setDisabledTextColor(new Color(-16777216));
-        typeAmountTextArea.setFocusable(false);
-        typeAmountTextArea.setForeground(new Color(-16777216));
-        typeAmountTextArea.setInheritsPopupMenu(false);
-        typeAmountTextArea.setSelectedTextColor(new Color(-16777216));
-        typeAmountTextArea.setText(" Type amount... (gram)");
-        nutritionMainFrame.add(typeAmountTextArea, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 30), null, 0, false));
+        nutritionMainFrame.add(buttonOK, new com.intellij.uiDesigner.core.GridConstraints(6, 0, 1, 6, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         nutritionsLabel = new JLabel();
         nutritionsLabel.setAutoscrolls(true);
         nutritionsLabel.setBackground(new Color(-15946596));
         nutritionsLabel.setHorizontalTextPosition(10);
         nutritionsLabel.setText("");
-        nutritionMainFrame.add(nutritionsLabel, new com.intellij.uiDesigner.core.GridConstraints(6, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(0, 160), null, 0, false));
+        nutritionMainFrame.add(nutritionsLabel, new com.intellij.uiDesigner.core.GridConstraints(12, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(0, 160), null, 0, false));
     }
 
     /**
