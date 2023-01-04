@@ -33,11 +33,11 @@ public class FoodController {
     public static void main(String[] args){
         FoodController foodController = new FoodController();
 //        Ingredient ingredient = foodController.getIngredient("frozen peas", "100", "gram");
-        Ingredients ingredients = new Ingredients();
-        RecipeResponse recipes = foodController.getRecipe("pasta", "4");
-        for (int i = 0; i < 4; i++) {
-            ingredients = foodController.getRecipeIngredients(recipes.getResults().get(2));
-        }
+//        Ingredients ingredients = new Ingredients();
+//        RecipeResponse recipes = foodController.getRecipe("pasta", "4");
+//        for (int i = 0; i < 4; i++) {
+//            ingredients = foodController.getRecipeIngredients(recipes.getResults().get(2));
+//        }
 //        ingredient.getNutrition().getNutrients().forEach(nutrient ->System.out.println(nutrient.getName() + ": " + nutrient.getAmount()));
 //        System.out.println(recipes.getResults().get(0).getSteps().get(3));
 
