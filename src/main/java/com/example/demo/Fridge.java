@@ -13,6 +13,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Locale;
+
 public class Fridge extends JFrame {
     private JPanel fridgeMainFrame;
     private JPanel fridgeTitlePanel;
@@ -39,7 +40,7 @@ public class Fridge extends JFrame {
                 Ingredient ingredient = foodController.getIngredient(pattern, "100", "gram");
                 String foodName = ingredient.getName();
                 String foodImage = ingredient.getImage();
-                String sqlAddFood = "Insert into food values ('" + foodName +"', '" + foodImage + "');";
+                String sqlAddFood = "Insert into food values ('" + foodName + "', '" + foodImage + "');";
                 System.out.println(foodName);
                 System.out.println(foodImage);
                 listModel.addElement(foodName);

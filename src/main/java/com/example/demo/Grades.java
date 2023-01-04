@@ -1,5 +1,4 @@
 package com.example.demo;
-
 public class Grades {
     private int grade_id;
     private int grade;

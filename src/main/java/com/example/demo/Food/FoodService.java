@@ -4,6 +4,7 @@ import com.example.demo.Food.ingredient_id.IngredientId;
 import com.example.demo.Food.ingredient_id.IngredientResponse;
 import com.example.demo.Food.recipe.Recipe;
 import com.example.demo.Food.recipe.RecipeResponse;
+import com.example.demo.Food.recipe.ingredients.Ingredients;
 import com.example.demo.Food.recipe.steps.RecipeSteps;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 @Service
 public class FoodService {
@@ -20,11 +22,16 @@ public class FoodService {
     private static final String INGREDIENT_ID_URL = "https://api.spoonacular.com/food/ingredients/search?";
     private static final String RECIPE_STEPS_URL = "https://api.spoonacular.com/recipes/";
     private static final String RECIPE_SEARCH_URL = "https://api.spoonacular.com/recipes/complexSearch?";
+
+    private static final String RECIPE_INGREDIENTS_URL = "https://api.spoonacular.com/recipes/";
 //    apiKey=75ea5da8b94e4d0f839c3c3767c9d791
 //    b32dcd69c8324e7c96de4e04aeecd7ea
-    private static final String API_KEY = "apiKey=b32dcd69c8324e7c96de4e04aeecd7ea";
+//    bade76f63b1d4353bce85c63ca404348
+//    af2b11d819e04bf49ad7ed85bfa8c95a
+    private static final String API_KEY = "apiKey=af2b11d819e04bf49ad7ed85bfa8c95a";
 
     private final RestTemplate restTemplate = new RestTemplate();
+
 
     public IngredientId getIngredient(String food) {
         String jsonId = restTemplate.getForObject(INGREDIENT_ID_URL + API_KEY + "&query={food}&number=1", String.class, food);
@@ -82,6 +89,19 @@ public class FoodService {
             }
             recipe.setSteps(response.get(0).getSteps());
         }
+    }
+    public Ingredients getRecipeingredients(Recipe recipe){
+        String jsonRecipeIngredients = restTemplate.getForObject(RECIPE_INGREDIENTS_URL + "{id}/ingredientWidget.json?" + API_KEY, String.class, recipe.getRecipe_id().toString());
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        Ingredients response = new Ingredients();
+        try {
+            response = objectMapper.readValue(jsonRecipeIngredients, Ingredients.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+        return response;
+
     }
 
 }

@@ -3,6 +3,8 @@
 //import com.example.demo.Food.FoodController;
 //import com.example.demo.Food.recipe.Recipe;
 //import com.example.demo.Food.recipe.RecipeResponse;
+//import com.example.demo.Food.recipe.ingredients.IngredientDescription;
+//import com.example.demo.Food.recipe.ingredients.Ingredients;
 //import com.example.demo.Food.recipe.steps.Step;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.CommandLineRunner;
@@ -23,23 +25,40 @@
 //
 //    @Override
 //    public void run(String... args) throws Exception {
-//        jdbcTemplate.update("delete from recipe_step");
 //        FoodController foodController = new FoodController();
 //        ArrayList<RecipeResponse> recipes = new ArrayList<>();
-////        , "dumplings", "burger", "tofu", "chicken", "pancakes", "salad", "cake", "soup", "pie"
-//        ArrayList<String> foods = new ArrayList<String>(Arrays.asList("pasta"));
+////        , "dumplings", "burger",
+//        ArrayList<String> foods = new ArrayList<String>(Arrays.asList("ravioli"));
 //        int idx = 0;
-//        int step_id = 1;
+//        int ingredientId = 420;
 //        for (String food : foods) {
-//            recipes.add(foodController.getRecipe(food, "4"));
+//            recipes.add(foodController.getRecipe(food, "1"));
 //            for (Recipe recipe : recipes.get(idx).getResults()) {
-////                if (recipe == recipes.get(idx).getResults().get(0)){
-////                    continue;
-////                }
 ////                jdbcTemplate.update("INSERT INTO recipe VALUES (?, ?, ?)", recipe.getRecipe_id(), recipe.getName(), recipe.getImage_url());
-//                for (Step step : recipe.getSteps()) {
-//                    jdbcTemplate.update("INSERT INTO recipe_step VALUES (?, ?, ?, ?)", step_id, step.getNumber(), step.getStep(), step.getRecipeId());
-//                    step_id++;
+//                Ingredients ingredients = foodController.getRecipeIngredients(recipe);
+//
+//                for (IngredientDescription ingredient : ingredients.getIngredients()) {
+//
+//                    if (jdbcTemplate.queryForObject("SELECT COUNT(*) FROM FOOD WHERE name = \'" + ingredient.getName() + "\'", Integer.class) == 0)
+//                    {
+//                        ingredient.setId(0);
+//                    }
+//                    else{
+//                        int id = jdbcTemplate.queryForObject("SELECT item_id FROM FOOD WHERE name = \'" + ingredient.getName() + "\'", Integer.class);
+//                        ingredient.setId(id);
+//                    }
+//                    String query = "SELECT COUNT(*) FROM FOOD WHERE item_id = " + ingredient.getId();
+//                    if (jdbcTemplate.queryForObject(query, Integer.class) == 0) {
+//                        jdbcTemplate.update("INSERT INTO food VALUES (?, ?)", ingredient.getId() ,ingredient.getName());
+//
+//                    }
+//                    float amount = ingredient.getAmount().getMetric().getValue();
+//                    String unit = ingredient.getAmount().getMetric().getUnit();
+//                    if (ingredientId > 419) {
+//                        jdbcTemplate.update("INSERT INTO ingredient VALUES (?, ?, ?, ?, ?)", ingredientId, recipe.getRecipe_id(), ingredient.getId(), amount, unit);
+//                    }
+//
+//                    ingredientId++;
 //                }
 //            }
 //            idx++;

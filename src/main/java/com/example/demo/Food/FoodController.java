@@ -4,10 +4,7 @@ import com.example.demo.Food.ingredient.Ingredient;
 import com.example.demo.Food.ingredient_id.IngredientId;
 import com.example.demo.Food.recipe.Recipe;
 import com.example.demo.Food.recipe.RecipeResponse;
-import com.example.demo.Food.recipe.steps.RecipeSteps;
-import com.example.demo.Food.recipe.steps.Step;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.example.demo.Food.recipe.ingredients.Ingredients;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -29,10 +26,18 @@ public class FoodController {
         foodService.getRecipeSteps(recipes);
         return recipes;
     }
+    public Ingredients getRecipeIngredients(Recipe recipe){
+        Ingredients ingredients = foodService.getRecipeingredients(recipe);
+        return ingredients;
+    }
     public static void main(String[] args){
         FoodController foodController = new FoodController();
-        Ingredient ingredient = foodController.getIngredient("orange", "100", "gram");
-//        RecipeResponse recipes = foodController.getRecipe("pasta", "10");
+//        Ingredient ingredient = foodController.getIngredient("frozen peas", "100", "gram");
+        Ingredients ingredients = new Ingredients();
+        RecipeResponse recipes = foodController.getRecipe("pasta", "4");
+        for (int i = 0; i < 4; i++) {
+            ingredients = foodController.getRecipeIngredients(recipes.getResults().get(2));
+        }
 //        ingredient.getNutrition().getNutrients().forEach(nutrient ->System.out.println(nutrient.getName() + ": " + nutrient.getAmount()));
 //        System.out.println(recipes.getResults().get(0).getSteps().get(3));
 
