@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Locale;
 
-@Component
+
 public class frame extends JFrame {
 
     private JPanel mainFrame;

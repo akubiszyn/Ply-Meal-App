@@ -5,16 +5,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
+import java.sql.*;
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
+import javax.swing.plaf.nimbus.State;
 import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Locale;
 
-@Component
+
 public class Fridge extends JFrame {
     private JPanel fridgeMainFrame;
     private JPanel fridgeTitlePanel;
@@ -24,8 +25,8 @@ public class Fridge extends JFrame {
     private JTextField enterItem;
     private JButton removeItemButton;
     private DefaultListModel listModel;
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+
+    OracleCon connection;
 
     public Fridge() {
         super();
@@ -43,11 +44,18 @@ public class Fridge extends JFrame {
                 Ingredient ingredient = foodController.getIngredient(pattern, "100", "gram");
                 String foodName = ingredient.getName();
                 String foodImage = ingredient.getImage();
-                String sqlAddFood = "Insert into client values (2, 'Rysiu')";
-                System.out.println(foodName);
-                System.out.println(foodImage);
                 listModel.addElement(foodName);
-                jdbcTemplate.update(sqlAddFood);
+//tu się zaczyna połączenie
+                try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+                     Statement stmt = conn.createStatement();
+                     ResultSet rs = stmt.executeQuery("Select * from grades");) {
+                    while (rs.next()) {
+                        System.out.println(rs.getInt(1) + "  " + rs.getInt(2) + "  " + rs.getString(3));
+                    }
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+//tu się kończy połączenie
 //                model.addElement("aaaaa");
                 itemList.setModel(listModel);
                 enterItem.setText("");
