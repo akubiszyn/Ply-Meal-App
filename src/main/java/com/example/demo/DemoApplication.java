@@ -14,8 +14,6 @@ import java.util.List;
 @SpringBootApplication
 
 public class DemoApplication implements CommandLineRunner {
-	@Autowired
-	private JdbcTemplate jdbcTemplate;
 
 	public static void main(String[] args) {
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(DemoApplication.class);
