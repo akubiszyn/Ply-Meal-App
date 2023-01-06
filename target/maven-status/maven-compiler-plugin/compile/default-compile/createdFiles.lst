@@ -5,6 +5,7 @@ com\example\demo\frame$5.class
 com\example\demo\frame$1.class
 com\example\demo\Food\FoodService$1.class
 com\example\demo\SearchNutrition$1.class
+com\example\demo\Recipe$2.class
 com\example\demo\SearchRecipe$1.class
 com\example\demo\frame$4.class
 com\example\demo\WeeklyMenu.class
@@ -16,6 +17,7 @@ com\example\demo\Food\FoodController.class
 com\example\demo\frame$3.class
 com\example\demo\NewRecipe.class
 com\example\demo\SearchRecipe.class
+com\example\demo\Recipe$1.class
 com\example\demo\frame$6.class
 com\example\demo\frame.class
 com\example\demo\SearchNutrition.class
