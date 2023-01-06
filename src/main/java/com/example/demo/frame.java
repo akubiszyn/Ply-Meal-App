@@ -1,15 +1,16 @@
 package com.example.demo;
 
+import org.springframework.stereotype.Component;
+
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.Locale;
 
-import com.example.demo.DemoApplication;
-import org.springframework.boot.SpringApplication;
 
 public class frame extends JFrame {
 
@@ -22,6 +23,8 @@ public class frame extends JFrame {
     private JButton searchNutritonButton;
     private JButton searchRecipeButton;
     private JButton addRecipeButton;
+    private JButton logInButton;
+    private JButton signUpButton;
 
     public frame() {
         super();
@@ -75,6 +78,18 @@ public class frame extends JFrame {
 
         });
 
+        signUpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SingUp singUp = new SingUp();
+            }
+        });
+        logInButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LogIn logIn = new LogIn();
+            }
+        });
     }
 
     {
@@ -93,7 +108,7 @@ public class frame extends JFrame {
      */
     private void $$$setupUI$$$() {
         mainFrame = new JPanel();
-        mainFrame.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(8, 11, new Insets(10, 10, 10, 10), -1, -1));
+        mainFrame.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(9, 11, new Insets(10, 10, 10, 10), -1, -1));
         mainFrame.setBackground(new Color(-15946596));
         final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
         mainFrame.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(6, 0, 1, 11, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
@@ -152,14 +167,14 @@ public class frame extends JFrame {
         final com.intellij.uiDesigner.core.Spacer spacer6 = new com.intellij.uiDesigner.core.Spacer();
         mainFrame.add(spacer6, new com.intellij.uiDesigner.core.GridConstraints(4, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer7 = new com.intellij.uiDesigner.core.Spacer();
-        mainFrame.add(spacer7, new com.intellij.uiDesigner.core.GridConstraints(7, 8, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        mainFrame.add(spacer7, new com.intellij.uiDesigner.core.GridConstraints(7, 8, 2, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         addRecipeButton = new JButton();
         addRecipeButton.setBackground(new Color(-9906520));
         Font addRecipeButtonFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 20, addRecipeButton.getFont());
         if (addRecipeButtonFont != null) addRecipeButton.setFont(addRecipeButtonFont);
         addRecipeButton.setForeground(new Color(-1));
         addRecipeButton.setText("Add recipe");
-        mainFrame.add(addRecipeButton, new com.intellij.uiDesigner.core.GridConstraints(7, 9, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainFrame.add(addRecipeButton, new com.intellij.uiDesigner.core.GridConstraints(7, 9, 2, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         searchRecipeButton = new JButton();
         searchRecipeButton.setBackground(new Color(-9906520));
         Font searchRecipeButtonFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 20, searchRecipeButton.getFont());
@@ -167,6 +182,20 @@ public class frame extends JFrame {
         searchRecipeButton.setForeground(new Color(-1));
         searchRecipeButton.setText("Search recipe");
         mainFrame.add(searchRecipeButton, new com.intellij.uiDesigner.core.GridConstraints(2, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        logInButton = new JButton();
+        logInButton.setBackground(new Color(-9770823));
+        Font logInButtonFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 14, logInButton.getFont());
+        if (logInButtonFont != null) logInButton.setFont(logInButtonFont);
+        logInButton.setForeground(new Color(-16100280));
+        logInButton.setText(" Log in ");
+        mainFrame.add(logInButton, new com.intellij.uiDesigner.core.GridConstraints(8, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        signUpButton = new JButton();
+        signUpButton.setBackground(new Color(-9770823));
+        Font signUpButtonFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 14, signUpButton.getFont());
+        if (signUpButtonFont != null) signUpButton.setFont(signUpButtonFont);
+        signUpButton.setForeground(new Color(-16100280));
+        signUpButton.setText("Sign up");
+        mainFrame.add(signUpButton, new com.intellij.uiDesigner.core.GridConstraints(7, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
@@ -198,7 +227,7 @@ public class frame extends JFrame {
         return mainFrame;
     }
 
-//    public static void main(String[] args){
+    //    public static void main(String[] args){
 //
 //        JFrame window = new frame();
 //        SpringApplication.run(DemoApplication.class, args);

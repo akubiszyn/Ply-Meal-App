@@ -14,8 +14,6 @@ import java.util.List;
 @SpringBootApplication
 
 public class DemoApplication implements CommandLineRunner {
-	@Autowired
-	private JdbcTemplate jdbcTemplate;
 
 	public static void main(String[] args) {
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(DemoApplication.class);
@@ -24,7 +22,7 @@ public class DemoApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception{
+	public void run(String... args){
 		JFrame window = new frame();
 //		String sql = "SELECT * FROM grades";
 //		List<Grades> grades = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Grades.class));
