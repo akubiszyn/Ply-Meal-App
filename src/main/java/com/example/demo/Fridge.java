@@ -26,8 +26,6 @@ public class Fridge extends JFrame {
     private JButton removeItemButton;
     private DefaultListModel listModel;
 
-    OracleCon connection;
-
     public Fridge() {
         super();
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,13 +46,14 @@ public class Fridge extends JFrame {
 //tu się zaczyna połączenie
                 try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
                      Statement stmt = conn.createStatement();
-                     ResultSet rs = stmt.executeQuery("Select * from grades");) {
+                     ResultSet rs = stmt.executeQuery("Select * from food");) {
                     while (rs.next()) {
-                        System.out.println(rs.getInt(1) + "  " + rs.getInt(2) + "  " + rs.getString(3));
+                        System.out.println(rs.getInt(1) + "  " + rs.getString(2));
                     }
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
+
 //tu się kończy połączenie
 //                model.addElement("aaaaa");
                 itemList.setModel(listModel);

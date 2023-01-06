@@ -11,22 +11,23 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.swing.*;
 import java.util.List;
-@SpringBootApplication
+//@SpringBootApplication
 
-public class DemoApplication implements CommandLineRunner {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplicationBuilder builder = new SpringApplicationBuilder(DemoApplication.class);
-		builder.headless(false);
-		ConfigurableApplicationContext context = builder.run(args);
+//		SpringApplicationBuilder builder = new SpringApplicationBuilder(DemoApplication.class);
+//		builder.headless(false);
+//		ConfigurableApplicationContext context = builder.run(args);
+		JFrame window = new frame();
 	}
 
-	@Override
-	public void run(String... args) throws Exception{
-		JFrame window = new frame();
-//		String sql = "SELECT * FROM grades";
-//		List<Grades> grades = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Grades.class));
-//		grades.forEach(System.out :: println);
-	}
+//	@Override
+//	public void run(String... args) throws Exception{
+//
+////		String sql = "SELECT * FROM grades";
+////		List<Grades> grades = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Grades.class));
+////		grades.forEach(System.out :: println);
+//	}
 
 }
