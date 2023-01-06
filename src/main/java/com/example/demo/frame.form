@@ -40,7 +40,7 @@
               <foreground color="-15946596"/>
               <horizontalAlignment value="0"/>
               <horizontalTextPosition value="0"/>
-              <text value="Nice tittle"/>
+              <text value="Nice title"/>
             </properties>
           </component>
         </children>
@@ -104,7 +104,7 @@
           <background color="-9906520"/>
           <font name="Goudy Old Style" size="20" style="1"/>
           <foreground color="-1"/>
-          <text value="Search nutriton"/>
+          <text value="Search nutrition"/>
         </properties>
       </component>
       <vspacer id="bd3f1">

@@ -92,7 +92,7 @@ public class FoodService {
             recipe.setSteps(response.get(0).getSteps());
         }
     }
-    public Ingredients getRecipeingredients(Recipe recipe){
+    public Ingredients getRecipeIngredients(Recipe recipe){
         String jsonRecipeIngredients = restTemplate.getForObject(RECIPE_INGREDIENTS_URL + "{id}/ingredientWidget.json?" + API_KEY, String.class, recipe.getRecipe_id().toString());
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);

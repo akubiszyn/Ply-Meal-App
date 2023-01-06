@@ -19,6 +19,9 @@ public class SearchNutrition extends JFrame {
     private JTextField amount;
     private JButton buttonOK;
     private JLabel nutritionsLabel;
+    private JPanel typeProduct;
+    private JTextField typeProductText;
+    private JPanel typeRecipe;
 
     public SearchNutrition() {
         super();

@@ -28,7 +28,7 @@ public class FoodController {
         return recipes;
     }
     public Ingredients getRecipeIngredients(Recipe recipe){
-        Ingredients ingredients = foodService.getRecipeingredients(recipe);
+        Ingredients ingredients = foodService.getRecipeIngredients(recipe);
         return ingredients;
     }
 
