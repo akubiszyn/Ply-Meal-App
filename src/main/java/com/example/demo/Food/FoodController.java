@@ -5,6 +5,7 @@ import com.example.demo.Food.ingredient_id.IngredientId;
 import com.example.demo.Food.recipe.Recipe;
 import com.example.demo.Food.recipe.RecipeResponse;
 import com.example.demo.Food.recipe.ingredients.Ingredients;
+import com.example.demo.Food.recipe.nutrients.RecipeNutrients;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -30,9 +31,15 @@ public class FoodController {
         Ingredients ingredients = foodService.getRecipeingredients(recipe);
         return ingredients;
     }
+
+    public RecipeNutrients getRecipeNutrients (int id){
+        RecipeNutrients recipeNutrients = foodService.getRecipeNutrients(id);
+        return  recipeNutrients;
+    }
     public static void main(String[] args){
-        FoodController foodController = new FoodController();
-//        Ingredient ingredient = foodController.getIngredient("frozen peas", "100", "gram");
+//        FoodController foodController = new FoodController();
+//        RecipeNutrients nutrients = foodController.getRecipeNutrients(1003464);
+//        Ingredient ingredient = foodController.getIngredient("banana", "100", "gram");
 //        Ingredients ingredients = new Ingredients();
 //        RecipeResponse recipes = foodController.getRecipe("pasta", "4");
 //        for (int i = 0; i < 4; i++) {

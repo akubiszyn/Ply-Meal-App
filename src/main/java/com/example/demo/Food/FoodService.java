@@ -5,6 +5,7 @@ import com.example.demo.Food.ingredient_id.IngredientResponse;
 import com.example.demo.Food.recipe.Recipe;
 import com.example.demo.Food.recipe.RecipeResponse;
 import com.example.demo.Food.recipe.ingredients.Ingredients;
+import com.example.demo.Food.recipe.nutrients.RecipeNutrients;
 import com.example.demo.Food.recipe.steps.RecipeSteps;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -22,6 +23,7 @@ public class FoodService {
     private static final String INGREDIENT_ID_URL = "https://api.spoonacular.com/food/ingredients/search?";
     private static final String RECIPE_STEPS_URL = "https://api.spoonacular.com/recipes/";
     private static final String RECIPE_SEARCH_URL = "https://api.spoonacular.com/recipes/complexSearch?";
+    private static final String RECIPE_NUTRITION_URL = "https://api.spoonacular.com/recipes/";
 
     private static final String RECIPE_INGREDIENTS_URL = "https://api.spoonacular.com/recipes/";
 //    apiKey=75ea5da8b94e4d0f839c3c3767c9d791
@@ -104,4 +106,17 @@ public class FoodService {
 
     }
 
+    public RecipeNutrients getRecipeNutrients(int id){
+        String jsonRecipeNutrients = restTemplate.getForObject(RECIPE_NUTRITION_URL + "{id}/nutritionWidget.json?" + API_KEY, String.class, "" + id);
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        RecipeNutrients response = new RecipeNutrients();
+        try {
+            response = objectMapper.readValue(jsonRecipeNutrients, RecipeNutrients.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+        return response;
+
+    }
 }
