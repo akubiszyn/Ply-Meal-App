@@ -5,32 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bbc9717-67e7-467a-abbb-93487a10faad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LogIn.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LogIn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SingUp.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SingUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Recipe.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Recipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Fridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Fridge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/NewRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/NewRecipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchNutrition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchNutrition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchRecipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ShoppingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ShoppingList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/WeeklyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/WeeklyMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/Fridge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/Fridge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/SearchNutrition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/SearchNutrition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/SearchRecipe$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/SearchRecipe$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/SearchRecipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/SearchRecipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ShoppingList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ShoppingList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/WeeklyMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/WeeklyMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/frame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/frame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/frame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/frame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/frame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/frame$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/frame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/frame$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/frame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/frame$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/frame$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/frame$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/frame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
     </list>
@@ -74,13 +56,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "168",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Dominika/Desktop/4.01/pap-project",
+    "last_opened_file_path": "C:/Users/Dominika/Desktop/sary/pap-project",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propGUI",
     "spring.configuration.checksum": "09a81a2dc7e0ec6b410edb655bc4ecc6"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.DemoApplication (1)">
+  <component name="RunManager" selected="Spring Boot.DemoApplication">
     <configuration name="DemoApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
@@ -105,6 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672865743281</updated>
       <workItem from="1672865745718" duration="4599000" />
+      <workItem from="1673016635016" duration="1515000" />
     </task>
     <servers />
   </component>
