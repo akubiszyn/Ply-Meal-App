@@ -4,7 +4,7 @@ import com.example.demo.Food.ingredient.Ingredient;
 import com.example.demo.Food.ingredient_id.IngredientId;
 import com.example.demo.Food.recipe.Recipe;
 import com.example.demo.Food.recipe.RecipeResponse;
-import com.example.demo.Food.recipe.ingredients.Ingredients;
+import com.example.demo.Food.ingredient.Ingredient;
 import com.example.demo.Food.recipe.nutrients.RecipeNutrients;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,8 +27,8 @@ public class FoodController {
         foodService.getRecipeSteps(recipes);
         return recipes;
     }
-    public Ingredients getRecipeIngredients(Recipe recipe){
-        Ingredients ingredients = foodService.getRecipeingredients(recipe);
+    public Ingredient getRecipeIngredients(Recipe recipe){
+        Ingredient ingredients = foodService.getRecipeingredients(recipe);
         return ingredients;
     }
 
