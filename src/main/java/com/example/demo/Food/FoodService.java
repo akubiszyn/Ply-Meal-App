@@ -4,7 +4,7 @@ import com.example.demo.Food.ingredient_id.IngredientId;
 import com.example.demo.Food.ingredient_id.IngredientResponse;
 import com.example.demo.Food.recipe.Recipe;
 import com.example.demo.Food.recipe.RecipeResponse;
-import com.example.demo.Food.ingredient.Ingredient;
+import com.example.demo.Food.recipe.ingredients.Ingredients;
 import com.example.demo.Food.recipe.nutrients.RecipeNutrients;
 import com.example.demo.Food.recipe.steps.RecipeSteps;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -92,13 +92,13 @@ public class FoodService {
             recipe.setSteps(response.get(0).getSteps());
         }
     }
-    public Ingredient getRecipeingredients(Recipe recipe){
+    public Ingredients getRecipeIngredients(Recipe recipe){
         String jsonRecipeIngredients = restTemplate.getForObject(RECIPE_INGREDIENTS_URL + "{id}/ingredientWidget.json?" + API_KEY, String.class, recipe.getRecipe_id().toString());
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        Ingredient response = new Ingredient();
+        Ingredients response = new Ingredients();
         try {
-            response = objectMapper.readValue(jsonRecipeIngredients, Ingredient.class);
+            response = objectMapper.readValue(jsonRecipeIngredients, Ingredients.class);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
