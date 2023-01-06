@@ -1,4 +1,1 @@
-com/example/demo/Food/ingredient/Nutrition.class
-com/example/demo/Food/recipe/steps/Step.class
-com/example/demo/Food/ingredient/Ingredient.class
-com/example/demo/Food/ingredient/Nutrients.class
+com\example\demo\Food\recipe\nutrients\RecipeNutrients.class

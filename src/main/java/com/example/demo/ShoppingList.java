@@ -20,9 +20,12 @@ public class ShoppingList extends JFrame {
     private JButton removeItemButton;
     private JTextField enterItem;
     private JButton addItemButton;
+    private JScrollPane itemListScroll;
 
     public ShoppingList() {
         super();
+        itemListScroll.setViewportView(itemList);
+        itemList.setLayoutOrientation(JList.VERTICAL);
         this.setSize(800, 400);
         this.setBounds(300, 50, 900, 700);
         this.setContentPane(shoppingListMainFrame);
@@ -57,7 +60,8 @@ public class ShoppingList extends JFrame {
                             listModel.addElement(foodName);
                         } catch (SQLIntegrityConstraintViolationException exc) {
                             ;
-                        }                    }
+                        }
+                    }
 
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
@@ -125,15 +129,6 @@ public class ShoppingList extends JFrame {
         shoppingListMainFrame.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(4, 20, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer3 = new com.intellij.uiDesigner.core.Spacer();
         shoppingListMainFrame.add(spacer3, new com.intellij.uiDesigner.core.GridConstraints(2, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        itemList = new JList();
-        itemList.setBackground(new Color(-5570596));
-        itemList.setDoubleBuffered(true);
-        Font itemListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, itemList.getFont());
-        if (itemListFont != null) itemList.setFont(itemListFont);
-        itemList.setForeground(new Color(-16100280));
-        itemList.setSelectionBackground(new Color(-9118745));
-        itemList.setSelectionForeground(new Color(-16100280));
-        shoppingListMainFrame.add(itemList, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 2, 15, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         removeItemButton = new JButton();
         removeItemButton.setBackground(new Color(-9118745));
         Font removeItemButtonFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, removeItemButton.getFont());
@@ -158,6 +153,17 @@ public class ShoppingList extends JFrame {
         addItemButton.setMargin(new Insets(5, 5, 5, 5));
         addItemButton.setText("Add item");
         shoppingListMainFrame.add(addItemButton, new com.intellij.uiDesigner.core.GridConstraints(2, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        itemListScroll = new JScrollPane();
+        shoppingListMainFrame.add(itemListScroll, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 2, 15, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        itemList = new JList();
+        itemList.setBackground(new Color(-5570596));
+        itemList.setDoubleBuffered(true);
+        Font itemListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, itemList.getFont());
+        if (itemListFont != null) itemList.setFont(itemListFont);
+        itemList.setForeground(new Color(-16100280));
+        itemList.setSelectionBackground(new Color(-9118745));
+        itemList.setSelectionForeground(new Color(-16100280));
+        itemListScroll.setViewportView(itemList);
     }
 
     /**
