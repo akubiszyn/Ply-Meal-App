@@ -47,15 +47,18 @@ public class ShoppingList extends JFrame {
                 Ingredient ingredient = foodController.getIngredient(pattern, "100", "gram");
                 String foodName = ingredient.getName();
                 int foodId = ingredient.getId();
-                listModel.addElement(foodName);
+
 
                 try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
                      Statement stmt = conn.createStatement();) {
                     try (ResultSet rsFood = stmt.executeQuery("insert into food values(" + foodId + ", '" + foodName + "')");) {
                     } catch (SQLIntegrityConstraintViolationException ex) {
-                        ResultSet rsList = stmt.executeQuery("insert into shopping_list values(" + foodId + ", 1)");
-                    }
-                    ResultSet rsList = stmt.executeQuery("insert into shopping_list values(" + foodId + ", 1)");
+                        try (ResultSet rsList = stmt.executeQuery("insert into shopping_list values(" + foodId + ", 1)")) {
+                            listModel.addElement(foodName);
+                        } catch (SQLIntegrityConstraintViolationException exc) {
+                            ;
+                        }                    }
+
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
