@@ -50,8 +50,8 @@ public class SearchRecipe extends JFrame {
         recipeList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                if (!e.getValueIsAdjusting()){
-                    JList source = (JList)e.getSource();
+                if (!e.getValueIsAdjusting()) {
+                    JList source = (JList) e.getSource();
                     String selected = source.getSelectedValue().toString();
                     System.out.println(selected);
                     Recipe recipe = new Recipe(selected);
