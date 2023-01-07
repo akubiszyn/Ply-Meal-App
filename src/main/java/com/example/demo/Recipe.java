@@ -88,11 +88,12 @@ public class Recipe extends JFrame {
         try {
             URL url = new URL(image_url);
             image = ImageIO.read(url);
+            imageLabel.setIcon(new ImageIcon(image));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        imageLabel.setIcon(new ImageIcon(image));
+
         this.setVisible(true);
 
         shoppingButton.addActionListener(new ActionListener() {
