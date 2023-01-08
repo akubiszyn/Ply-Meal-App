@@ -24,6 +24,10 @@ public class frame extends JFrame {
     private JButton signUpButton;
     private JButton favouriteButton2;
 
+    private LogIn login_window;
+
+    public int client_id = 0;
+
     public frame() {
         super();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -35,14 +39,19 @@ public class frame extends JFrame {
         searchRecipeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SearchRecipe search = new SearchRecipe();
+                if(check_user())
+                {
+                    SearchRecipe search = new SearchRecipe();
+                }
             }
         });
 
         searchNutritonButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SearchNutrition nutrition = new SearchNutrition();
+                if(check_user()) {
+                    SearchNutrition nutrition = new SearchNutrition();
+                }
 
             }
         });
@@ -50,28 +59,37 @@ public class frame extends JFrame {
         weeklyMenuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                WeeklyMenu menu = new WeeklyMenu();
+                if(check_user()) {
+                    WeeklyMenu menu = new WeeklyMenu();
+                }
             }
         });
 
         myFridgeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Fridge fridge = new Fridge();
+                if(check_user())
+                {
+                    Fridge fridge = new Fridge();
+                }
             }
         });
 
         shoppingListButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ShoppingList shoppingList = new ShoppingList();
+                if(check_user()) {
+                    ShoppingList shoppingList = new ShoppingList();
+                }
             }
         });
 
         addRecipeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                NewRecipe newRecipe = new NewRecipe();
+                if(check_user()) {
+                    NewRecipe newRecipe = new NewRecipe();
+                }
             }
 
         });
@@ -86,15 +104,47 @@ public class frame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 LogIn logIn = new LogIn();
+                login_window = logIn;
             }
         });
         favouriteButton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Favourite favourite = new Favourite();
+                if(check_user()) {
+                    Favourite favourite = new Favourite();
+                }
             }
         });
+
     }
+    public boolean check_user()
+    {
+        try
+        {
+            client_id = login_window.client_id;
+            if (client_id == 0)
+            {
+                System.out.println("You have to log in first");
+                return false;
+            }
+            else
+            {
+                System.out.println("User id: " + client_id);
+                return true;
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println("You have to log in first");
+            return false;
+        }
+
+    }
+
+//    public void add_user(String new_username)
+//    {
+//        this. = new_username;
+//    }
 
     //    public static void main(String[] args){
 //

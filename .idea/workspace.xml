@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f138786f-71f8-4fe0-a26a-e5cd5fc5e017" name="Changes" comment="added nutrients to the recipe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/NewRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/NewRecipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Recipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/LogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/LogIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SingUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SingUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +96,7 @@
       <workItem from="1673033614285" duration="713000" />
       <workItem from="1673034697168" duration="16200000" />
       <workItem from="1673057326222" duration="196000" />
-      <workItem from="1673200370045" duration="5020000" />
+      <workItem from="1673200370045" duration="10062000" />
     </task>
     <servers />
   </component>
