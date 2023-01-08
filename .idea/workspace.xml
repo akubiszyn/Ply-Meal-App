@@ -6,18 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f138786f-71f8-4fe0-a26a-e5cd5fc5e017" name="Changes" comment="added nutrients to the recipe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/NewRecipe.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/NewRecipe.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/NewRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/NewRecipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/Food/FoodController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/Food/FoodController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/Food/FoodService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/Food/FoodService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/Recipe$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/Recipe$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/Recipe$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/Recipe$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/Recipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/Recipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/SearchNutrition$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/SearchNutrition$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/SearchNutrition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/SearchNutrition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/frame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,23 +39,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "92",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "201",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Dominika/Desktop/aaa/pap-project",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propGUI",
-    "spring.configuration.checksum": "09a81a2dc7e0ec6b410edb655bc4ecc6"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;92&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;201&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dominika/Desktop/sary again/pap-project&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propGUI&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fe01ce2a7fbac8fafaed7c982a04e229&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.DemoApplication (1)">
     <configuration name="demo-0.0.1-SNAPSHOT.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar" />
@@ -103,7 +93,9 @@
       <workItem from="1673016635016" duration="1515000" />
       <workItem from="1673031073195" duration="1321000" />
       <workItem from="1673033614285" duration="713000" />
-      <workItem from="1673034697168" duration="15318000" />
+      <workItem from="1673034697168" duration="16200000" />
+      <workItem from="1673057326222" duration="196000" />
+      <workItem from="1673200370045" duration="5020000" />
     </task>
     <servers />
   </component>

@@ -90,7 +90,8 @@ public class Recipe extends JFrame {
             image = ImageIO.read(url);
             imageLabel.setIcon(new ImageIcon(image));
         } catch (IOException e) {
-            e.printStackTrace();
+           // e.printStackTrace();
+            System.out.println("url error");
         }
 
 
