@@ -19,12 +19,15 @@ public class SearchRecipe extends JFrame {
     private JTextField enterRecipe;
     private JList recipeList;
 
-    public SearchRecipe() {
+    private int client_id;
+
+    public SearchRecipe(int client_id) {
         super();
         this.setSize(800, 400);
         this.setBounds(300, 50, 900, 700);
         this.setContentPane(recipeMainFrame);
         this.setVisible(true);
+        this.client_id = client_id;
 
         searchRecipeButton.addActionListener(new ActionListener() {
             @Override
@@ -54,7 +57,7 @@ public class SearchRecipe extends JFrame {
                     JList source = (JList) e.getSource();
                     String selected = source.getSelectedValue().toString();
                     System.out.println(selected);
-                    Recipe recipe = new Recipe(selected);
+                    Recipe recipe = new Recipe(selected, client_id);
                     //recipe.recipeTitle.setText(selected);
                 }
             }

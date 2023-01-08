@@ -23,7 +23,6 @@ public class SingUp extends JFrame {
         this.setBounds(600, 250, 300, 300);
         this.setContentPane(panel1);
         DefaultListModel listModel = new DefaultListModel<>();
-        this.setVisible(true);
 
         String sqlQuery = "select max(client_id) from client where client_id < 1000";
         try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
@@ -48,6 +47,7 @@ public class SingUp extends JFrame {
                     try (ResultSet rsClient = stmt.executeQuery("insert into client values(" + new_client_id + ",'" + username + "')");) {
                     } catch (SQLIntegrityConstraintViolationException ex) {
                         System.out.println("client not added");
+                        ExceptionPopUp exceptionPopUp = new ExceptionPopUp("Username not unique!");
                         System.out.println(ex.getMessage());
                     }
                 } catch (SQLException ex) {
@@ -56,6 +56,7 @@ public class SingUp extends JFrame {
 
             }
         });
+        this.setVisible(true);
     }
 
 }

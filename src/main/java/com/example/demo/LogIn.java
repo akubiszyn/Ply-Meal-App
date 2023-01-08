@@ -46,6 +46,7 @@ public class LogIn extends JFrame {
                     {
                         correct_login = 0;
                         System.out.println("User is not signed up");
+                        ExceptionPopUp exceptionPopUp = new ExceptionPopUp("User not registered!");
                     }
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);

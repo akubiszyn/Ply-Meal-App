@@ -41,7 +41,7 @@ public class frame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if(check_user())
                 {
-                    SearchRecipe search = new SearchRecipe();
+                    SearchRecipe search = new SearchRecipe(client_id);
                 }
             }
         });
@@ -111,7 +111,7 @@ public class frame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(check_user()) {
-                    Favourite favourite = new Favourite();
+                    Favourite favourite = new Favourite(client_id);
                 }
             }
         });
@@ -125,6 +125,7 @@ public class frame extends JFrame {
             if (client_id == 0)
             {
                 System.out.println("You have to log in first");
+                ExceptionPopUp exceptionPopUp = new ExceptionPopUp("You have to log in first!");
                 return false;
             }
             else
@@ -136,6 +137,7 @@ public class frame extends JFrame {
         catch(Exception e)
         {
             System.out.println("You have to log in first");
+            ExceptionPopUp exceptionPopUp = new ExceptionPopUp("You have to log in first!");
             return false;
         }
 

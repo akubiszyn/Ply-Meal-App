@@ -33,8 +33,9 @@ public class Recipe extends JFrame {
 
     private int fav = 0;
 
+    private int client_id = 0;
 
-    public Recipe(String selected) {
+    public Recipe(String selected, int client_id) {
         super();
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(800, 400);
@@ -60,7 +61,7 @@ public class Recipe extends JFrame {
         show_ingredients(ingredients);
         //get_ingredients(Integer.toString(this.recipe_id));
 
-        String sql = "select * from fav_recipe where recipe_id =" + recipe_id;
+        String sql = "select * from fav_recipe where recipe_id =" + recipe_id + " and client_id = " + client_id;
         try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql);) {
@@ -125,7 +126,6 @@ public class Recipe extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String message = favouriteButton.getText();
-                int client_id = 1;
 
                 if (message == "Add recipe to favourite recipes") {
                     try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
@@ -144,7 +144,7 @@ public class Recipe extends JFrame {
                 } else {
                     try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
                          Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery("Delete from fav_recipe where recipe_id =" + recipe_id);) {
+                         ResultSet rs = stmt.executeQuery("Delete from fav_recipe where recipe_id =" + recipe_id + "and client_id =" + client_id);) {
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
