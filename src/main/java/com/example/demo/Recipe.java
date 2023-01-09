@@ -31,8 +31,11 @@ public class Recipe extends JFrame {
     private JLabel recipeTitle;
     private JLabel imageLabel;
 
+    private int fav = 0;
 
-    public Recipe(String selected) {
+    private int client_id = 0;
+
+    public Recipe(String selected, int client_id) {
         super();
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(800, 400);
@@ -58,17 +61,41 @@ public class Recipe extends JFrame {
         show_ingredients(ingredients);
         //get_ingredients(Integer.toString(this.recipe_id));
 
+        String sql = "select * from fav_recipe where recipe_id =" + recipe_id + " and client_id = " + client_id;
+        try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql);) {
+            if (rs.next()) {
+                fav = 1;
+            }
+//            while (rs.next()) {
+//                model.addElement(rs.getString(1));
+//            }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+
+
+        if (fav == 1) {
+            favouriteButton.setText("Delete recipe from favourite recipes");
+        } else {
+            favouriteButton.setText("Add recipe to favourite recipes");
+        }
+
+
         get_steps(this.recipe_id);
 
         Image image = null;
         try {
             URL url = new URL(image_url);
             image = ImageIO.read(url);
+            imageLabel.setIcon(new ImageIcon(image));
         } catch (IOException e) {
-            e.printStackTrace();
+           // e.printStackTrace();
+            System.out.println("url error");
         }
 
-        imageLabel.setIcon(new ImageIcon(image));
+
         this.setVisible(true);
 
         shoppingButton.addActionListener(new ActionListener() {
@@ -93,6 +120,37 @@ public class Recipe extends JFrame {
                 }
 
 //                model.addElement("aaaaa");
+            }
+        });
+        favouriteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String message = favouriteButton.getText();
+
+                if (message == "Add recipe to favourite recipes") {
+                    try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+                         Statement stmt = conn.createStatement();) {
+
+                        try (ResultSet rsFood = stmt.executeQuery("insert into fav_recipe values(" + client_id + ", '" + recipe_id + "')");) {
+                        } catch (SQLIntegrityConstraintViolationException ex) {
+                            ;
+                        }
+
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    favouriteButton.setText("Delete recipe from favourite recipes");
+                    fav = 1;
+                } else {
+                    try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+                         Statement stmt = conn.createStatement();
+                         ResultSet rs = stmt.executeQuery("Delete from fav_recipe where recipe_id =" + recipe_id + "and client_id =" + client_id);) {
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    favouriteButton.setText("Add recipe to favourite recipes");
+                    fav = 0;
+                }
             }
         });
     }
