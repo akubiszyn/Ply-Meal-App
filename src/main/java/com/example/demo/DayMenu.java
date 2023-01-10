@@ -69,7 +69,7 @@ public class DayMenu extends JFrame {
                 DinnerRemoveButton, DessertRemoveButton,
                 SupperRemoveButton, SnackRemoveButton
         ));
-
+        int day_number = dayNames.indexOf(day_name) + 1;
         ActionListener removeButtonListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -102,11 +102,11 @@ public class DayMenu extends JFrame {
                          Statement stmt = conn.createStatement();
                          ResultSet rs = stmt.executeQuery("Delete from weekly_menu where recipe_id = (select recipe_id from recipe where name like '"
                                  + selectedList.getModel().getElementAt(selectedItem) + "' and client_id = " + client_id
-                                 + " and meal_number = " + (indexList + 1) + " and day_number = " + dayNames.indexOf(day_name) + 1 + ")");) {
+                                 + " and meal_number = " + (indexList + 1) +" and day_number = " + day_number +   ")");) {
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    show_meals(selectedList, client_id, dayNames.indexOf(day_name) + 1, mealLists.indexOf(selectedList) + 1);
+                    show_meals(selectedList, client_id, day_number, mealLists.indexOf(selectedList) + 1);
                 }
             }
         };
@@ -131,7 +131,7 @@ public class DayMenu extends JFrame {
                 }
 
                 new SearchRecipe(client_id, 1, dayNames.indexOf(day_name) + 1, meal_number + 1);
-                show_meals(mealLists.get(meal_number), client_id, dayNames.indexOf(day_name) + 1, addButtons.indexOf(BreakfastAddButton) + 1);
+                show_meals(mealLists.get(meal_number), client_id, dayNames.indexOf(day_name) + 1, addButtons.indexOf(button) + 1);
             }
         };
         BreakfastAddButton.addActionListener(addButtonListener);
