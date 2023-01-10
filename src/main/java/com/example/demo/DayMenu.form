@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.example.demo.DayMenu">
+  <grid id="27dc6" binding="mainDayMenuFrame" layout-manager="GridLayoutManager" row-count="9" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="20" left="20" bottom="20" right="20"/>
+    <constraints>
+      <xy x="20" y="20" width="1047" height="439"/>
+    </constraints>
+    <properties>
+      <background color="-15946596"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="4beed" class="javax.swing.JButton" binding="SupperAddButton">
+        <constraints>
+          <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="80" height="35"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Add"/>
+        </properties>
+      </component>
+      <component id="c8412" class="javax.swing.JButton" binding="DessertAddButton">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Add"/>
+        </properties>
+      </component>
+      <component id="1fb5f" class="javax.swing.JButton" binding="SnackAddButton">
+        <constraints>
+          <grid row="8" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Add"/>
+        </properties>
+      </component>
+      <component id="6a198" class="javax.swing.JButton" binding="IIBreakfastAddButton">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Add"/>
+        </properties>
+      </component>
+      <component id="cf345" class="javax.swing.JButton" binding="DinnerAddButton">
+        <constraints>
+          <grid row="4" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Add"/>
+        </properties>
+      </component>
+      <component id="30cec" class="javax.swing.JButton" binding="BreakfastAddButton">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Add"/>
+        </properties>
+      </component>
+      <vspacer id="fe6b5">
+        <constraints>
+          <grid row="7" column="5" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="8b6f0">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="2561b">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="6c224">
+        <constraints>
+          <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="687db" class="javax.swing.JButton" binding="BreakfastRemoveButton">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Remove"/>
+        </properties>
+      </component>
+      <component id="917fd" class="javax.swing.JButton" binding="IIBreakfastRemoveButton">
+        <constraints>
+          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Remove"/>
+        </properties>
+      </component>
+      <component id="a4b8" class="javax.swing.JButton" binding="DinnerRemoveButton">
+        <constraints>
+          <grid row="4" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Remove"/>
+        </properties>
+      </component>
+      <component id="ff83c" class="javax.swing.JButton" binding="DessertRemoveButton">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="80" height="35"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Remove"/>
+        </properties>
+      </component>
+      <component id="6100f" class="javax.swing.JButton" binding="SupperRemoveButton">
+        <constraints>
+          <grid row="8" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="80" height="35"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Remove"/>
+        </properties>
+      </component>
+      <component id="8c0d" class="javax.swing.JButton" binding="SnackRemoveButton">
+        <constraints>
+          <grid row="8" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-9906520"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-3340"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Remove"/>
+        </properties>
+      </component>
+      <grid id="68522" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="f054a" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font name="Broadway" size="36"/>
+              <foreground color="-15946596"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value="Breakfast"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="1408d" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="2" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="537eb" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font name="Broadway" size="36"/>
+              <foreground color="-15946596"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value="II Breakfast"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="8e9b3" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="6" row-span="1" col-span="2" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="7bf0f" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font name="Broadway" size="36"/>
+              <foreground color="-15946596"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value="Dinner"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="9e726" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="73d9d" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font name="Broadway" size="36"/>
+              <foreground color="-15946596"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value="Dessert"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="4e7cb" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="6" column="3" row-span="1" col-span="2" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="9445f" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font name="Broadway" size="36"/>
+              <foreground color="-15946596"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value="Supper"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="b1020" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="6" column="6" row-span="1" col-span="2" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="b62ef" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font name="Broadway" size="36"/>
+              <foreground color="-15946596"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value="Snack"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <vspacer id="7599a">
+        <constraints>
+          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <grid id="e7a74" binding="DayMenuPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="8" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="bee04" class="javax.swing.JLabel" binding="DayName">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font name="Broadway" size="36"/>
+              <foreground color="-15946596"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value=""/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <vspacer id="65fcc">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="de807" class="javax.swing.JList" binding="BreakfastList">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+          <font name="Goudy Old Style" style="1"/>
+          <foreground color="-16100280"/>
+          <model/>
+          <selectionBackground color="-9118745"/>
+          <selectionForeground color="-16100280"/>
+        </properties>
+      </component>
+      <component id="96442" class="javax.swing.JList" binding="IIBreakfastList">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+          <font name="Goudy Old Style" style="1"/>
+          <foreground color="-16100280"/>
+          <model/>
+          <selectionBackground color="-9118745"/>
+          <selectionForeground color="-16100280"/>
+        </properties>
+      </component>
+      <component id="df6b7" class="javax.swing.JList" binding="DinnerList">
+        <constraints>
+          <grid row="3" column="6" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+          <font name="Goudy Old Style" style="1"/>
+          <foreground color="-16100280"/>
+          <model/>
+          <selectionBackground color="-9118745"/>
+          <selectionForeground color="-16100280"/>
+        </properties>
+      </component>
+      <component id="1dd21" class="javax.swing.JList" binding="SnackList">
+        <constraints>
+          <grid row="7" column="6" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+          <font name="Goudy Old Style" style="1"/>
+          <foreground color="-16100280"/>
+          <model/>
+          <selectionBackground color="-9118745"/>
+          <selectionForeground color="-16100280"/>
+        </properties>
+      </component>
+      <component id="89086" class="javax.swing.JList" binding="SupperList">
+        <constraints>
+          <grid row="7" column="3" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+          <font name="Goudy Old Style" style="1"/>
+          <foreground color="-16100280"/>
+          <model/>
+          <selectionBackground color="-9118745"/>
+          <selectionForeground color="-16100280"/>
+        </properties>
+      </component>
+      <component id="4eed4" class="javax.swing.JList" binding="DessertList">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-5570596"/>
+          <font name="Goudy Old Style" style="1"/>
+          <foreground color="-16100280"/>
+          <model/>
+          <selectionBackground color="-9118745"/>
+          <selectionForeground color="-16100280"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

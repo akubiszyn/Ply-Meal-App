@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="shoppingListMainFrame" layout-manager="GridLayoutManager" row-count="5" column-count="21" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="20" left="20" bottom="20" right="20"/>
     <constraints>
-      <xy x="20" y="20" width="620" height="400"/>
+      <xy x="20" y="20" width="771" height="400"/>
     </constraints>
     <properties>
       <background color="-15946596"/>
@@ -90,7 +90,7 @@
       </component>
       <scrollpane id="b7925" binding="itemListScroll">
         <constraints>
-          <grid row="3" column="0" row-span="2" col-span="15" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="2" col-span="17" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
         <border type="none"/>
@@ -108,6 +108,18 @@
           </component>
         </children>
       </scrollpane>
+      <component id="6d6d8" class="javax.swing.JButton" binding="clearAllButton">
+        <constraints>
+          <grid row="2" column="16" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-9118745"/>
+          <font name="Goudy Old Style" size="26" style="1"/>
+          <foreground color="-16100280"/>
+          <margin top="5" left="5" bottom="5" right="5"/>
+          <text value="Clear all"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

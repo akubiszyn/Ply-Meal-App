@@ -68,8 +68,7 @@ public class frame extends JFrame {
         myFridgeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(check_user())
-                {
+                if (check_user()) {
                     Fridge fridge = new Fridge(client_id);
                 }
             }
