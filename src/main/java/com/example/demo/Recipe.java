@@ -1,6 +1,4 @@
 package com.example.demo;
-import com.example.demo.Food.FoodController;
-import com.example.demo.Food.ingredient.Ingredient;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,7 +11,6 @@ import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Locale;
 
 public class Recipe extends JFrame {
@@ -30,6 +27,8 @@ public class Recipe extends JFrame {
     private JButton favouriteButton;
     private JLabel recipeTitle;
     private JLabel imageLabel;
+    private JScrollPane stepsScrollPane;
+    private JScrollPane ingredientsScrollPane;
 
     private int fav = 0;
 
@@ -37,6 +36,11 @@ public class Recipe extends JFrame {
 
     public Recipe(String selected, int client_id) {
         super();
+        stepsScrollPane.setViewportView(stepsList);
+        stepsList.setLayoutOrientation(JList.VERTICAL);
+
+        ingredientsScrollPane.setViewportView(ingredientsList);
+        ingredientsList.setLayoutOrientation(JList.VERTICAL);
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(800, 400);
         this.setBounds(300, 50, 900, 700);
@@ -291,18 +295,6 @@ public class Recipe extends JFrame {
         recipeTitle.setForeground(new Color(-3340));
         recipeTitle.setText("Label");
         panel.add(recipeTitle, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        ingredientsList = new JList();
-        ingredientsList.setBackground(new Color(-5570596));
-        Font ingredientsListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 14, ingredientsList.getFont());
-        if (ingredientsListFont != null) ingredientsList.setFont(ingredientsListFont);
-        ingredientsList.setForeground(new Color(-16100280));
-        panel.add(ingredientsList, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
-        stepsList = new JList();
-        stepsList.setBackground(new Color(-5570596));
-        Font stepsListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 14, stepsList.getFont());
-        if (stepsListFont != null) stepsList.setFont(stepsListFont);
-        stepsList.setForeground(new Color(-16100280));
-        panel.add(stepsList, new com.intellij.uiDesigner.core.GridConstraints(1, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer4 = new com.intellij.uiDesigner.core.Spacer();
         panel.add(spacer4, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         shoppingButton = new JButton();
@@ -322,6 +314,22 @@ public class Recipe extends JFrame {
         imageLabel = new JLabel();
         imageLabel.setText(" ");
         panel.add(imageLabel, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        stepsScrollPane = new JScrollPane();
+        panel.add(stepsScrollPane, new com.intellij.uiDesigner.core.GridConstraints(1, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        stepsList = new JList();
+        stepsList.setBackground(new Color(-5570596));
+        Font stepsListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 14, stepsList.getFont());
+        if (stepsListFont != null) stepsList.setFont(stepsListFont);
+        stepsList.setForeground(new Color(-16100280));
+        stepsScrollPane.setViewportView(stepsList);
+        ingredientsScrollPane = new JScrollPane();
+        panel.add(ingredientsScrollPane, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        ingredientsList = new JList();
+        ingredientsList.setBackground(new Color(-5570596));
+        Font ingredientsListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 14, ingredientsList.getFont());
+        if (ingredientsListFont != null) ingredientsList.setFont(ingredientsListFont);
+        ingredientsList.setForeground(new Color(-16100280));
+        ingredientsScrollPane.setViewportView(ingredientsList);
     }
 
     /**

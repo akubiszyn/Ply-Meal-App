@@ -24,11 +24,14 @@ public class Fridge extends JFrame {
     private JButton addItemButton;
     private JTextField enterItem;
     private JButton removeItemButton;
+    private JScrollPane itemScrollPane;
     private DefaultListModel listModel;
     private int clientId = 1;
 
     public Fridge() {
         super();
+        itemScrollPane.setViewportView(itemList);
+        itemList.setLayoutOrientation(JList.VERTICAL);
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(800, 400);
         this.setBounds(300, 50, 900, 700);
@@ -121,15 +124,6 @@ public class Fridge extends JFrame {
         fridgeMainFrame.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(4, 20, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer3 = new com.intellij.uiDesigner.core.Spacer();
         fridgeMainFrame.add(spacer3, new com.intellij.uiDesigner.core.GridConstraints(2, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        itemList = new JList();
-        itemList.setBackground(new Color(-5570596));
-        itemList.setDoubleBuffered(true);
-        Font itemListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, itemList.getFont());
-        if (itemListFont != null) itemList.setFont(itemListFont);
-        itemList.setForeground(new Color(-16100280));
-        itemList.setSelectionBackground(new Color(-9118745));
-        itemList.setSelectionForeground(new Color(-16100280));
-        fridgeMainFrame.add(itemList, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 2, 15, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         removeItemButton = new JButton();
         removeItemButton.setBackground(new Color(-9118745));
         Font removeItemButtonFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, removeItemButton.getFont());
@@ -154,6 +148,17 @@ public class Fridge extends JFrame {
         addItemButton.setMargin(new Insets(5, 5, 5, 5));
         addItemButton.setText("Add item");
         fridgeMainFrame.add(addItemButton, new com.intellij.uiDesigner.core.GridConstraints(2, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        itemScrollPane = new JScrollPane();
+        fridgeMainFrame.add(itemScrollPane, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 2, 15, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        itemList = new JList();
+        itemList.setBackground(new Color(-5570596));
+        itemList.setDoubleBuffered(true);
+        Font itemListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, itemList.getFont());
+        if (itemListFont != null) itemList.setFont(itemListFont);
+        itemList.setForeground(new Color(-16100280));
+        itemList.setSelectionBackground(new Color(-9118745));
+        itemList.setSelectionForeground(new Color(-16100280));
+        itemScrollPane.setViewportView(itemList);
     }
 
     /**
