@@ -46,27 +46,58 @@ public class ShoppingList extends JFrame {
         addItemButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int itemId = -1;
                 String pattern = enterItem.getText();
-                FoodController foodController = new FoodController();
-                Ingredient ingredient = foodController.getIngredient(pattern, "100", "gram");
-                String foodName = ingredient.getName();
-                int foodId = ingredient.getId();
-
-
+                String foodName = pattern;
                 try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
-                     Statement stmt = conn.createStatement();) {
-                    try (ResultSet rsFood = stmt.executeQuery("insert into food values(" + foodId + ", '" + foodName + "')");) {
-                    } catch (SQLIntegrityConstraintViolationException ex) {
-                        try (ResultSet rsList = stmt.executeQuery("insert into shopping_list values(" + foodId + ", " + client_id + ")")) {
-                            listModel.addElement(foodName);
-                        } catch (SQLIntegrityConstraintViolationException exc) {
-                            ;
+                     Statement stmt = conn.createStatement();
+                     ResultSet rs1 = stmt.executeQuery("select item_id from food where name like '%" + pattern + "%'");) {
+                    if (rs1.next()) {
+                        itemId = rs1.getInt(1);
+                    } else {
+                        FoodController foodController = new FoodController();
+                        Ingredient ingredient = foodController.getIngredient(pattern, "100", "gram");
+                        foodName = ingredient.getName();
+                        itemId = ingredient.getId();
+                        try (ResultSet insertFood = stmt.executeQuery("insert into food values(" + itemId + ", '" + foodName + "')");) {
+                        } catch (SQLException ex) {
+                            throw new RuntimeException(ex);
                         }
                     }
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+                     Statement stmt = conn.createStatement();
+                     ResultSet rs2 = stmt.executeQuery("insert into shopping_list values(" + itemId + ", " + client_id + ")");) {
+                    listModel.addElement(foodName);
 
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
+
+
+//                String pattern = enterItem.getText();
+//                FoodController foodController = new FoodController();
+//                Ingredient ingredient = foodController.getIngredient(pattern, "100", "gram");
+//                String foodName = ingredient.getName();
+//                int foodId = ingredient.getId();
+//
+//
+//                try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+//                     Statement stmt = conn.createStatement();) {
+//                    try (ResultSet rsFood = stmt.executeQuery("insert into food values(" + foodId + ", '" + foodName + "')");) {
+//                    } catch (SQLIntegrityConstraintViolationException ex) {
+//                        try (ResultSet rsList = stmt.executeQuery("insert into shopping_list values(" + foodId + ", " + client_id + ")")) {
+//                            listModel.addElement(foodName);
+//                        } catch (SQLIntegrityConstraintViolationException exc) {
+//                            ;
+//                        }
+//                    }
+//
+//                } catch (SQLException ex) {
+//                    throw new RuntimeException(ex);
+//                }
 
 //                model.addElement("aaaaa");
                 itemList.setModel(listModel);
