@@ -5,25 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f138786f-71f8-4fe0-a26a-e5cd5fc5e017" name="Changes" comment="added nutrients to the recipe">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DayMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/DayMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ExceptionPopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ExceptionPopUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Favourite.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Favourite.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Favourite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Favourite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/NewRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/NewRecipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchNutrition.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchNutrition.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchNutrition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchNutrition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/WeeklyMenu.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/WeeklyMenu.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/WeeklyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/WeeklyMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/ExceptionPopUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/ExceptionPopUp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/Favourite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/Favourite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/NewRecipe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/SearchNutrition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/SearchNutrition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/WeeklyMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/WeeklyMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/frame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "92",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "240",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "248",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/Dominika/Desktop/Paaaaap/pap-project",
     "nodejs_package_manager_path": "npm",
@@ -112,7 +100,7 @@
       <workItem from="1673034697168" duration="16200000" />
       <workItem from="1673057326222" duration="196000" />
       <workItem from="1673200370045" duration="15299000" />
-      <workItem from="1673387672387" duration="2467000" />
+      <workItem from="1673387672387" duration="4689000" />
     </task>
     <servers />
   </component>
