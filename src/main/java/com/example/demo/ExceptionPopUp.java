@@ -15,8 +15,8 @@ public class ExceptionPopUp extends JFrame {
         this.setSize(300, 300);
         this.setBounds(600, 250, 300, 300);
         this.setContentPane(panel);
-        this.setVisible(true);
         exceptionField.setText(message);
+        this.setVisible(true);
     }
 
 

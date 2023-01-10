@@ -169,7 +169,7 @@ public class frame extends JFrame {
         tittle.setForeground(new Color(-15946596));
         tittle.setHorizontalAlignment(0);
         tittle.setHorizontalTextPosition(0);
-        tittle.setText("Nice title");
+        tittle.setText("PlyMeal");
         titlePanel.add(tittle, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         weeklyMenuButton = new JButton();
         weeklyMenuButton.setBackground(new Color(-9906520));
@@ -197,6 +197,7 @@ public class frame extends JFrame {
         shoppingListButton.setForeground(new Color(-3340));
         shoppingListButton.setHideActionText(false);
         shoppingListButton.setHorizontalTextPosition(0);
+        shoppingListButton.setSelected(false);
         shoppingListButton.setText("Shopping list");
         mainFrame.add(shoppingListButton, new com.intellij.uiDesigner.core.GridConstraints(5, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer5 = new com.intellij.uiDesigner.core.Spacer();
@@ -220,14 +221,14 @@ public class frame extends JFrame {
         searchRecipeButton.setText("Search recipe");
         mainFrame.add(searchRecipeButton, new com.intellij.uiDesigner.core.GridConstraints(2, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         logInButton = new JButton();
-        logInButton.setBackground(new Color(-9770823));
+        logInButton.setBackground(new Color(-9906520));
         Font logInButtonFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 14, logInButton.getFont());
         if (logInButtonFont != null) logInButton.setFont(logInButtonFont);
         logInButton.setForeground(new Color(-3340));
         logInButton.setText(" Log in ");
         mainFrame.add(logInButton, new com.intellij.uiDesigner.core.GridConstraints(9, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         signUpButton = new JButton();
-        signUpButton.setBackground(new Color(-9770823));
+        signUpButton.setBackground(new Color(-9906520));
         Font signUpButtonFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 14, signUpButton.getFont());
         if (signUpButtonFont != null) signUpButton.setFont(signUpButtonFont);
         signUpButton.setForeground(new Color(-3340));
