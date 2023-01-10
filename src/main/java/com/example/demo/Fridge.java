@@ -134,12 +134,12 @@ public class Fridge extends JFrame {
      */
     private void $$$setupUI$$$() {
         fridgeMainFrame = new JPanel();
-        fridgeMainFrame.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(6, 22, new Insets(20, 20, 20, 20), -1, -1));
+        fridgeMainFrame.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(6, 14, new Insets(20, 20, 20, 20), -1, -1));
         fridgeMainFrame.setBackground(new Color(-15946596));
         fridgeTitlePanel = new JPanel();
         fridgeTitlePanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
         fridgeTitlePanel.setBackground(new Color(-5570596));
-        fridgeMainFrame.add(fridgeTitlePanel, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 22, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, 1, null, null, null, 0, false));
+        fridgeMainFrame.add(fridgeTitlePanel, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 14, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, 1, null, null, null, 0, false));
         tittle = new JLabel();
         tittle.setEnabled(true);
         Font tittleFont = this.$$$getFont$$$("Broadway", -1, 36, tittle.getFont());
@@ -150,20 +150,11 @@ public class Fridge extends JFrame {
         tittle.setText("What's in my fridge");
         fridgeTitlePanel.add(tittle, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
-        fridgeMainFrame.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 22, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, 1, null, null, null, 0, false));
+        fridgeMainFrame.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 14, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, 1, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer2 = new com.intellij.uiDesigner.core.Spacer();
-        fridgeMainFrame.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(4, 21, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        fridgeMainFrame.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(4, 13, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer3 = new com.intellij.uiDesigner.core.Spacer();
         fridgeMainFrame.add(spacer3, new com.intellij.uiDesigner.core.GridConstraints(2, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        itemList = new JList();
-        itemList.setBackground(new Color(-5570596));
-        itemList.setDoubleBuffered(true);
-        Font itemListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, itemList.getFont());
-        if (itemListFont != null) itemList.setFont(itemListFont);
-        itemList.setForeground(new Color(-16100280));
-        itemList.setSelectionBackground(new Color(-9118745));
-        itemList.setSelectionForeground(new Color(-16100280));
-        fridgeMainFrame.add(itemList, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 2, 16, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         removeItemButton = new JButton();
         removeItemButton.setBackground(new Color(-9118745));
         Font removeItemButtonFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, removeItemButton.getFont());
@@ -171,7 +162,7 @@ public class Fridge extends JFrame {
         removeItemButton.setForeground(new Color(-16100280));
         removeItemButton.setMargin(new Insets(5, 5, 5, 5));
         removeItemButton.setText("Remove item");
-        fridgeMainFrame.add(removeItemButton, new com.intellij.uiDesigner.core.GridConstraints(2, 7, 1, 9, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        fridgeMainFrame.add(removeItemButton, new com.intellij.uiDesigner.core.GridConstraints(2, 7, 1, 3, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         enterItem = new JTextField();
         enterItem.setBackground(new Color(-9118745));
         Font enterItemFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, enterItem.getFont());
@@ -190,6 +181,17 @@ public class Fridge extends JFrame {
         fridgeMainFrame.add(addItemButton, new com.intellij.uiDesigner.core.GridConstraints(2, 4, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer4 = new com.intellij.uiDesigner.core.Spacer();
         fridgeMainFrame.add(spacer4, new com.intellij.uiDesigner.core.GridConstraints(5, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        final JScrollPane scrollPane1 = new JScrollPane();
+        fridgeMainFrame.add(scrollPane1, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 8, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        itemList = new JList();
+        itemList.setBackground(new Color(-5570596));
+        itemList.setDoubleBuffered(true);
+        Font itemListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, itemList.getFont());
+        if (itemListFont != null) itemList.setFont(itemListFont);
+        itemList.setForeground(new Color(-16100280));
+        itemList.setSelectionBackground(new Color(-9118745));
+        itemList.setSelectionForeground(new Color(-16100280));
+        scrollPane1.setViewportView(itemList);
         recommendedRecipe = new JButton();
         recommendedRecipe.setBackground(new Color(-9118745));
         Font recommendedRecipeFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, recommendedRecipe.getFont());
@@ -197,7 +199,7 @@ public class Fridge extends JFrame {
         recommendedRecipe.setForeground(new Color(-16100280));
         recommendedRecipe.setMargin(new Insets(5, 5, 5, 5));
         recommendedRecipe.setText("Recommended recipe");
-        fridgeMainFrame.add(recommendedRecipe, new com.intellij.uiDesigner.core.GridConstraints(5, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        fridgeMainFrame.add(recommendedRecipe, new com.intellij.uiDesigner.core.GridConstraints(4, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
