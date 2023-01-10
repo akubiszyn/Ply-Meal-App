@@ -40,7 +40,8 @@ public class frame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (check_user()) {
-                    SearchRecipe search = new SearchRecipe(client_id, 0, 0, 0);
+                    JList mockList = new JList();
+                    SearchRecipe search = new SearchRecipe(client_id, 0, 0, 0, mockList);
                 }
             }
         });

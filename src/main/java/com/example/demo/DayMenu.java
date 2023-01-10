@@ -115,22 +115,29 @@ public class DayMenu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Object button = e.getSource();
+                JList selectedList;
                 int meal_number = -1;
                 if (button == BreakfastAddButton) {
+                    selectedList = BreakfastList;
                     meal_number = addButtons.indexOf(BreakfastAddButton);
                 } else if (button == IIBreakfastAddButton) {
+                    selectedList = IIBreakfastList;
                     meal_number = addButtons.indexOf(IIBreakfastAddButton);
                 } else if (button == DinnerAddButton) {
+                    selectedList = DinnerList;
                     meal_number = addButtons.indexOf(DinnerAddButton);
                 } else if (button == DessertAddButton) {
+                    selectedList = DessertList;
                     meal_number = addButtons.indexOf(DessertAddButton);
                 } else if (button == SupperAddButton) {
+                    selectedList = SupperList;
                     meal_number = addButtons.indexOf(SupperAddButton);
                 } else {
+                    selectedList = SnackList;
                     meal_number = addButtons.indexOf(SnackAddButton);
                 }
 
-                new SearchRecipe(client_id, 1, dayNames.indexOf(day_name) + 1, meal_number + 1);
+                new SearchRecipe(client_id, 1, dayNames.indexOf(day_name) + 1, meal_number + 1, selectedList);
                 show_meals(mealLists.get(meal_number), client_id, dayNames.indexOf(day_name) + 1, addButtons.indexOf(button) + 1);
             }
         };

@@ -48,7 +48,7 @@ public class SearchRecipe extends JFrame {
         return meal_number;
     }
 
-    public SearchRecipe(int client_id, int search_or_menu, int day_number, int meal_number) {
+    public SearchRecipe(int client_id, int search_or_menu, int day_number, int meal_number, JList selectedList) {
 //        if search_or_menu is 0 its search, if 1 its menu
         super();
         this.setSize(800, 400);
@@ -98,6 +98,9 @@ public class SearchRecipe extends JFrame {
                              ResultSet rs = stmt.executeQuery("Insert into weekly_menu values ("
                                      + client_id + ", " + getDay_number() + ", " + getMeal_number()
                                      + ", (select recipe_id from recipe where name like '" + selected + "'))");) {
+                            DefaultListModel model = (DefaultListModel) selectedList.getModel();
+                            model.addElement(selected);
+                            selectedList.setModel(model);
                         } catch (SQLException ex) {
                             throw new RuntimeException(ex);
                         }
