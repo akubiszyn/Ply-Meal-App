@@ -87,6 +87,8 @@ public class Favourite extends JFrame {
         Font favouriteListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 26, favouriteList.getFont());
         if (favouriteListFont != null) favouriteList.setFont(favouriteListFont);
         favouriteList.setForeground(new Color(-16100280));
+        favouriteList.setSelectionBackground(new Color(-9118745));
+        favouriteList.setSelectionForeground(new Color(-16100280));
         panel.add(favouriteList, new com.intellij.uiDesigner.core.GridConstraints(2, 1, 4, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer2 = new com.intellij.uiDesigner.core.Spacer();
         panel.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
@@ -147,4 +149,5 @@ public class Favourite extends JFrame {
     public JComponent $$$getRootComponent$$$() {
         return panel;
     }
+
 }

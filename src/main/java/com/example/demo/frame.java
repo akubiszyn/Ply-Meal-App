@@ -196,6 +196,7 @@ public class frame extends JFrame {
         shoppingListButton.setForeground(new Color(-3340));
         shoppingListButton.setHideActionText(false);
         shoppingListButton.setHorizontalTextPosition(0);
+        shoppingListButton.setSelected(false);
         shoppingListButton.setText("Shopping list");
         mainFrame.add(shoppingListButton, new com.intellij.uiDesigner.core.GridConstraints(5, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer5 = new com.intellij.uiDesigner.core.Spacer();

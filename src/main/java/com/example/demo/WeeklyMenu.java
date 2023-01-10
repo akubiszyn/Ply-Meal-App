@@ -92,6 +92,7 @@ public class WeeklyMenu extends JFrame {
         mainWeeklyMenuFrame = new JPanel();
         mainWeeklyMenuFrame.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(4, 6, new Insets(20, 20, 20, 20), -1, -1));
         mainWeeklyMenuFrame.setBackground(new Color(-15946596));
+        mainWeeklyMenuFrame.setForeground(new Color(-1));
         final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
         mainWeeklyMenuFrame.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(3, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         FridayButton = new JButton();

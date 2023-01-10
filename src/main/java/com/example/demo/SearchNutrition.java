@@ -44,7 +44,6 @@ public class SearchNutrition extends JFrame {
         this.setSize(800, 400);
         this.setBounds(300, 50, 900, 700);
         this.setContentPane(nutritionMainFrame);
-        this.setVisible(true);
         try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("Select name from recipe");) {
@@ -55,6 +54,7 @@ public class SearchNutrition extends JFrame {
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
+        this.setVisible(true);
 
         this.buttonOK1.addActionListener(new ActionListener() {
             @Override

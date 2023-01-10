@@ -56,7 +56,6 @@ public class DayMenu extends JFrame {
         for (JList mealList : mealLists) {
             show_meals(mealList, client_id, dayNames.indexOf(day_name) + 1, mealLists.indexOf(mealList) + 1);
         }
-        this.setVisible(true);
 
 
         ArrayList<JButton> addButtons = new ArrayList<>(Arrays.asList(
@@ -102,7 +101,7 @@ public class DayMenu extends JFrame {
                          Statement stmt = conn.createStatement();
                          ResultSet rs = stmt.executeQuery("Delete from weekly_menu where recipe_id = (select recipe_id from recipe where name like '"
                                  + selectedList.getModel().getElementAt(selectedItem) + "' and client_id = " + client_id
-                                 + " and meal_number = " + (indexList + 1) +" and day_number = " + day_number +   ")");) {
+                                 + " and meal_number = " + (indexList + 1) + " and day_number = " + day_number + ")");) {
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
@@ -147,6 +146,7 @@ public class DayMenu extends JFrame {
         DessertRemoveButton.addActionListener(removeButtonListener);
         SupperRemoveButton.addActionListener(removeButtonListener);
         SnackRemoveButton.addActionListener(removeButtonListener);
+        this.setVisible(true);
     }
 
     public void show_meals(JList mealList, int client_id, int day_number, int meal_number) {
@@ -472,4 +472,5 @@ public class DayMenu extends JFrame {
     public JComponent $$$getRootComponent$$$() {
         return mainDayMenuFrame;
     }
+
 }

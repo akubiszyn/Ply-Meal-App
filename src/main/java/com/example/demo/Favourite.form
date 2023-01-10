@@ -25,6 +25,8 @@
           <background color="-5570596"/>
           <font name="Goudy Old Style" size="26" style="1"/>
           <foreground color="-16100280"/>
+          <selectionBackground color="-9118745"/>
+          <selectionForeground color="-16100280"/>
         </properties>
       </component>
       <vspacer id="d4a36">

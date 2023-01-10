@@ -36,7 +36,6 @@ public class NewRecipe extends JFrame {
         this.setSize(800, 400);
         this.setBounds(300, 50, 900, 700);
         this.setContentPane(panel);
-        this.setVisible(true);
 
         String sqlQuery = "select max(recipe_id) from recipe where recipe_id < 1000";
         try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
@@ -49,6 +48,8 @@ public class NewRecipe extends JFrame {
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
+
+        this.setVisible(true);
 
         enterTitleButton.addActionListener(new ActionListener() {
             @Override
