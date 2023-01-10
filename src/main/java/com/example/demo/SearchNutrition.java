@@ -35,6 +35,7 @@ public class SearchNutrition extends JFrame {
     private JLabel fatLabel1;
     private JLabel carbsLabel1;
     private JLabel proteinLabel1;
+    private JComboBox comboBox2;
 
 
     public SearchNutrition() {
@@ -61,8 +62,9 @@ public class SearchNutrition extends JFrame {
                 ArrayList<Nutrients> chosenNutrients = new ArrayList<>();
                 String food = product.getText();
                 String strAmount = amount.getText();
+                String unit = comboBox2.getSelectedItem().toString();
                 FoodController foodController = new FoodController();
-                Ingredient ingredient = foodController.getIngredient(food, strAmount, "gram");
+                Ingredient ingredient = foodController.getIngredient(food, strAmount, unit);
                 ArrayList<Nutrients> nutrientsList = ingredient.getNutrition().getNutrients();
                 for (Nutrients nutrient : nutrientsList) {
                     if (nutrient.getName().matches("Calories|Fat|Carbohydrates|Protein")) {

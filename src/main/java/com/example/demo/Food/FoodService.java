@@ -1,4 +1,5 @@
 package com.example.demo.Food;
+import com.example.demo.ExceptionPopUp;
 import com.example.demo.Food.ingredient.Ingredient;
 import com.example.demo.Food.ingredient_id.IngredientId;
 import com.example.demo.Food.ingredient_id.IngredientResponse;
@@ -44,6 +45,9 @@ public class FoodService {
             response = objectMapper.readValue(jsonId, IngredientResponse.class);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
+        }
+        if (response.getResults().size() == 0) {
+            ExceptionPopUp exceptionPopUp = new ExceptionPopUp("Invalid name of a product!");
         }
         return response.getResults().get(0);
     }

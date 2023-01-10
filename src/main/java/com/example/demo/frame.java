@@ -70,7 +70,7 @@ public class frame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if(check_user())
                 {
-                    Fridge fridge = new Fridge();
+                    Fridge fridge = new Fridge(client_id);
                 }
             }
         });
