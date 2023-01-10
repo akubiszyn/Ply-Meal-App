@@ -1,6 +1,7 @@
 com\example\demo\frame$2.class
 com\example\demo\Food\recipe\nutrients\RecipeNutrients.class
 com\example\demo\Fridge$2.class
+com\example\demo\SearchNutrition$2.class
 com\example\demo\frame$5.class
 com\example\demo\frame$1.class
 com\example\demo\Food\FoodService$1.class
@@ -8,13 +9,18 @@ com\example\demo\SearchNutrition$1.class
 com\example\demo\Recipe$2.class
 com\example\demo\SearchRecipe$1.class
 com\example\demo\frame$4.class
+com\example\demo\WeeklyMenu$1.class
 com\example\demo\WeeklyMenu.class
 com\example\demo\DemoApplication.class
 com\example\demo\Food\FoodService.class
+com\example\demo\DayMenu$1.class
 com\example\demo\Fridge.class
 com\example\demo\Fridge$1.class
+com\example\demo\DayMenu.class
 com\example\demo\Food\FoodController.class
 com\example\demo\frame$3.class
+com\example\demo\ShoppingList$3.class
+com\example\demo\DayMenu$2.class
 com\example\demo\NewRecipe.class
 com\example\demo\SearchRecipe.class
 com\example\demo\Recipe$1.class
