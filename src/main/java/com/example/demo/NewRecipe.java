@@ -102,9 +102,6 @@ public class NewRecipe extends JFrame {
                 }
 
 
-
-
-
 //                FoodController foodController = new FoodController();
 //                Ingredient ingredient = foodController.getIngredient(name, "100", "gram");
 //                String foodName = ingredient.getName();

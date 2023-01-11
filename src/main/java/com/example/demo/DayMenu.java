@@ -44,9 +44,10 @@ public class DayMenu extends JFrame {
         this.setSize(800, 400);
         this.setBounds(300, 50, 900, 700);
         DayName.setText(day_name);
+        this.setContentPane(mainDayMenuFrame);
+
         ArrayList<String> dayNames = new ArrayList<>(Arrays.asList("Monday",
                 "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"));
-        this.setContentPane(mainDayMenuFrame);
         mealLists.add(BreakfastList);
         mealLists.add(IIBreakfastList);
         mealLists.add(DinnerList);
@@ -391,7 +392,7 @@ public class DayMenu extends JFrame {
         mainDayMenuFrame.add(spacer6, new com.intellij.uiDesigner.core.GridConstraints(1, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         BreakfastList = new JList();
         BreakfastList.setBackground(new Color(-5570596));
-        Font BreakfastListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, -1, BreakfastList.getFont());
+        Font BreakfastListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 18, BreakfastList.getFont());
         if (BreakfastListFont != null) BreakfastList.setFont(BreakfastListFont);
         BreakfastList.setForeground(new Color(-16100280));
         final DefaultListModel defaultListModel1 = new DefaultListModel();
@@ -401,7 +402,7 @@ public class DayMenu extends JFrame {
         mainDayMenuFrame.add(BreakfastList, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         IIBreakfastList = new JList();
         IIBreakfastList.setBackground(new Color(-5570596));
-        Font IIBreakfastListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, -1, IIBreakfastList.getFont());
+        Font IIBreakfastListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 18, IIBreakfastList.getFont());
         if (IIBreakfastListFont != null) IIBreakfastList.setFont(IIBreakfastListFont);
         IIBreakfastList.setForeground(new Color(-16100280));
         final DefaultListModel defaultListModel2 = new DefaultListModel();
@@ -411,7 +412,7 @@ public class DayMenu extends JFrame {
         mainDayMenuFrame.add(IIBreakfastList, new com.intellij.uiDesigner.core.GridConstraints(3, 3, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         DinnerList = new JList();
         DinnerList.setBackground(new Color(-5570596));
-        Font DinnerListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, -1, DinnerList.getFont());
+        Font DinnerListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 18, DinnerList.getFont());
         if (DinnerListFont != null) DinnerList.setFont(DinnerListFont);
         DinnerList.setForeground(new Color(-16100280));
         final DefaultListModel defaultListModel3 = new DefaultListModel();
@@ -421,7 +422,7 @@ public class DayMenu extends JFrame {
         mainDayMenuFrame.add(DinnerList, new com.intellij.uiDesigner.core.GridConstraints(3, 6, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         SnackList = new JList();
         SnackList.setBackground(new Color(-5570596));
-        Font SnackListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, -1, SnackList.getFont());
+        Font SnackListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 18, SnackList.getFont());
         if (SnackListFont != null) SnackList.setFont(SnackListFont);
         SnackList.setForeground(new Color(-16100280));
         final DefaultListModel defaultListModel4 = new DefaultListModel();
@@ -431,7 +432,7 @@ public class DayMenu extends JFrame {
         mainDayMenuFrame.add(SnackList, new com.intellij.uiDesigner.core.GridConstraints(7, 6, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         SupperList = new JList();
         SupperList.setBackground(new Color(-5570596));
-        Font SupperListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, -1, SupperList.getFont());
+        Font SupperListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 18, SupperList.getFont());
         if (SupperListFont != null) SupperList.setFont(SupperListFont);
         SupperList.setForeground(new Color(-16100280));
         final DefaultListModel defaultListModel5 = new DefaultListModel();
@@ -441,7 +442,7 @@ public class DayMenu extends JFrame {
         mainDayMenuFrame.add(SupperList, new com.intellij.uiDesigner.core.GridConstraints(7, 3, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         DessertList = new JList();
         DessertList.setBackground(new Color(-5570596));
-        Font DessertListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, -1, DessertList.getFont());
+        Font DessertListFont = this.$$$getFont$$$("Goudy Old Style", Font.BOLD, 18, DessertList.getFont());
         if (DessertListFont != null) DessertList.setFont(DessertListFont);
         DessertList.setForeground(new Color(-16100280));
         final DefaultListModel defaultListModel6 = new DefaultListModel();
@@ -479,5 +480,4 @@ public class DayMenu extends JFrame {
     public JComponent $$$getRootComponent$$$() {
         return mainDayMenuFrame;
     }
-
 }

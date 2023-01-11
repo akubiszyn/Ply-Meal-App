@@ -149,5 +149,4 @@ public class Favourite extends JFrame {
     public JComponent $$$getRootComponent$$$() {
         return panel;
     }
-
 }

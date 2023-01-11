@@ -38,7 +38,7 @@ public class Fridge extends JFrame {
         DefaultListModel listModel = new DefaultListModel<>();
         try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("Select name from fridge_list join food using (item_id) where client_id = " + this.clientId);) {
+             ResultSet rs = stmt.executeQuery("Select distinct name from fridge_list join food using (item_id) where client_id = " + this.clientId);) {
             while (rs.next()) {
                 listModel.addElement(rs.getString(1));
             }
@@ -112,8 +112,7 @@ public class Fridge extends JFrame {
                         String recipe_name = rs.getString(2);
                         if (recipe_name == null) {
                             ExceptionPopUp exceptionPopUp = new ExceptionPopUp("No recipe found!");
-                        }
-                        else {
+                        } else {
                             Recipe recipe = new Recipe(recipe_name, clientId);
                         }
                     }
