@@ -149,7 +149,7 @@ class DemoApplicationTests {
 
 	@Test
 	void check_shopping_list() {
-		String sqlInsert = "insert into shopping_list values (-1, 1)";
+		String sqlInsert = "insert into shopping_list values (1, 1)";
 		String sqlDelete = "delete from shopping_list where client_id = 0";
 		String sqlSelect = "Select item_id from shopping_list where client_id = 0";
 		try (
@@ -187,6 +187,61 @@ class DemoApplicationTests {
 	@Test
 	void check_shopping_list_client_not_exist() {
 		String sqlInsert = "insert into shopping_list values (1, -1)";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+			Exception exception = Assertions.assertThrows(SQLIntegrityConstraintViolationException.class, () -> {
+				ResultSet rsInsert = stmt.executeQuery(sqlInsert);
+			});
+			String exceptionName = exception.getClass().getSimpleName();
+			String expectedName = "SQLIntegrityConstraintViolationException";
+			Assertions.assertTrue(exceptionName.equals(expectedName));
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	@Test
+	void check_fridge_list() {
+		String sqlInsert = "insert into fridge_list values (1, 1, null)";
+		String sqlDelete = "delete from fridge_list where client_id = 0";
+		String sqlSelect = "Select item_id from fridge_list where client_id = 0";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+			ResultSet rsInsert = stmt.executeQuery(sqlInsert);
+			ResultSet rsSelect = stmt.executeQuery(sqlSelect);
+			if (rsSelect.next()) {
+				Assertions.assertEquals(rsSelect.getInt(1), 1);
+			}
+			ResultSet rsDelete = stmt.executeQuery(sqlDelete);
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+	@Test
+	void check_fridge_list_food_not_exist() {
+		String sqlInsert = "insert into fridge_list values (-1, 1, null)";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+			Exception exception = Assertions.assertThrows(SQLIntegrityConstraintViolationException.class, () -> {
+				ResultSet rsInsert = stmt.executeQuery(sqlInsert);
+			});
+			String exceptionName = exception.getClass().getSimpleName();
+			String expectedName = "SQLIntegrityConstraintViolationException";
+			Assertions.assertTrue(exceptionName.equals(expectedName));
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	@Test
+	void check_fridge_list_client_not_exist() {
+		String sqlInsert = "insert into fridge_list values (1, -1, null)";
 		try (
 				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
 				Statement stmt = conn.createStatement();) {
