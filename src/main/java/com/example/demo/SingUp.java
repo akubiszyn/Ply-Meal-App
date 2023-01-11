@@ -10,9 +10,9 @@ import java.sql.*;
 import java.util.Locale;
 
 public class SingUp extends JFrame {
-    private JTextField usernameTextField;
+    public JTextField usernameTextField;
     private JPanel panel1;
-    private JButton singUpButton;
+    public JButton singUpButton;
     private JLabel usernameLabel;
 
     private int new_client_id;
