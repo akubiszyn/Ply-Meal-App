@@ -79,10 +79,36 @@ public class NewRecipe extends JFrame {
                 int ingredient_id = 0;
 
                 /*get from library*/
-                FoodController foodController = new FoodController();
-                Ingredient ingredient = foodController.getIngredient(name, "100", "gram");
-                String foodName = ingredient.getName();
-                int foodId = ingredient.getId();
+                int foodId = -1;
+                String foodName = name;
+                try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+                     Statement stmt = conn.createStatement();
+                     ResultSet rs1 = stmt.executeQuery("select item_id from food where name like '%" + name + "%'");) {
+                    if (rs1.next()) {
+                        foodId = rs1.getInt(1);
+                    } else {
+                        FoodController foodController = new FoodController();
+                        Ingredient ingredient = foodController.getIngredient(name, "100", "gram");
+                        foodName = ingredient.getName();
+                        foodId = ingredient.getId();
+                        try (ResultSet insertFood = stmt.executeQuery("insert into food values(" + foodId + ", '" + foodName + "')");) {
+                        } catch (SQLException ex) {
+//                            throw new RuntimeException(ex);
+                            System.out.println("not added to food");
+                        }
+                    }
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+
+
+
+
+//                FoodController foodController = new FoodController();
+//                Ingredient ingredient = foodController.getIngredient(name, "100", "gram");
+//                String foodName = ingredient.getName();
+//                int foodId = ingredient.getId();
 
                 System.out.println("foodName: " + foodName);
                 System.out.println("foodId: " + foodId);
@@ -113,22 +139,10 @@ public class NewRecipe extends JFrame {
 //                } catch (SQLException ex) {
 //                    throw new RuntimeException(ex);
 //                }
-                try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
-                     Statement stmt = conn.createStatement();) {
-                    try (ResultSet rsFood = stmt.executeQuery("insert into food values(" + foodId + ", '" + foodName + "')");) {
-                    } catch (SQLIntegrityConstraintViolationException ex) {
-//                        try (ResultSet rsList = stmt.executeQuery("insert into shopping_list values(" + foodId + ", 1)")) {
-//                            listModel.addElement(foodName);
-//                        } catch (SQLIntegrityConstraintViolationException exc) {
-//                            ;
-                        System.out.println("not added to food");
-                        System.out.println(ex.getMessage());
-//                        }
-                        ;
-                    }
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
+//
+//                } catch (SQLException ex) {
+//                    throw new RuntimeException(ex);
+//                }
 
                 System.out.println("ingredient_id: " + ingredient_id);
                 System.out.println("new_recipe_id: " + new_recipe_id);
