@@ -78,7 +78,8 @@ public class Fridge extends JFrame {
                     listModel.addElement(foodName);
 
                 } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
+                    ExceptionPopUp exceptionPopUp = new ExceptionPopUp("You've already added this product!");
+                    System.out.println(ex.getMessage());
                 }
 
                 itemList.setModel(listModel);
@@ -106,10 +107,15 @@ public class Fridge extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
                      Statement stmt = conn.createStatement();
-                     ResultSet rs = stmt.executeQuery("select count(*) as ilosc, r.name from recipe r join ingredient i using(recipe_id) right join fridge_list f using (item_id) group by r.name order by ilosc desc");) {
+                     ResultSet rs = stmt.executeQuery("select count(*) as ilosc, r.name from recipe r join ingredient i using(recipe_id) right join fridge_list f using (item_id) where client_id = " + clientId + " group by r.name order by ilosc desc  FETCH FIRST 1 ROWS ONLY");) {
                     if (rs.next()) {
                         String recipe_name = rs.getString(2);
-                        Recipe recipe = new Recipe(recipe_name, clientId);
+                        if (recipe_name == null) {
+                            ExceptionPopUp exceptionPopUp = new ExceptionPopUp("No recipe found!");
+                        }
+                        else {
+                            Recipe recipe = new Recipe(recipe_name, clientId);
+                        }
                     }
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
