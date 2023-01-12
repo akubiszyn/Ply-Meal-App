@@ -33,7 +33,7 @@ public class ShoppingList extends JFrame {
         DefaultListModel listModel = new DefaultListModel<>();
         try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("Select name from shopping_list sl join food f on (sl.item_id = f.item_id) where sl.client_id = " + client_id);) {
+             ResultSet rs = stmt.executeQuery("Select distinct name from shopping_list sl join food f on (sl.item_id = f.item_id) where sl.client_id = " + client_id);) {
             while (rs.next()) {
                 listModel.addElement(rs.getString(1));
             }

@@ -390,5 +390,4 @@ public class SearchNutrition extends JFrame {
     public JComponent $$$getRootComponent$$$() {
         return nutritionMainFrame;
     }
-
 }

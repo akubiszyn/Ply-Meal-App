@@ -373,7 +373,7 @@
         </constraints>
         <properties>
           <background color="-5570596"/>
-          <font name="Goudy Old Style" style="1"/>
+          <font name="Goudy Old Style" size="18" style="1"/>
           <foreground color="-16100280"/>
           <model/>
           <selectionBackground color="-9118745"/>
@@ -388,7 +388,7 @@
         </constraints>
         <properties>
           <background color="-5570596"/>
-          <font name="Goudy Old Style" style="1"/>
+          <font name="Goudy Old Style" size="18" style="1"/>
           <foreground color="-16100280"/>
           <model/>
           <selectionBackground color="-9118745"/>
@@ -403,7 +403,7 @@
         </constraints>
         <properties>
           <background color="-5570596"/>
-          <font name="Goudy Old Style" style="1"/>
+          <font name="Goudy Old Style" size="18" style="1"/>
           <foreground color="-16100280"/>
           <model/>
           <selectionBackground color="-9118745"/>
@@ -418,7 +418,7 @@
         </constraints>
         <properties>
           <background color="-5570596"/>
-          <font name="Goudy Old Style" style="1"/>
+          <font name="Goudy Old Style" size="18" style="1"/>
           <foreground color="-16100280"/>
           <model/>
           <selectionBackground color="-9118745"/>
@@ -433,7 +433,7 @@
         </constraints>
         <properties>
           <background color="-5570596"/>
-          <font name="Goudy Old Style" style="1"/>
+          <font name="Goudy Old Style" size="18" style="1"/>
           <foreground color="-16100280"/>
           <model/>
           <selectionBackground color="-9118745"/>
@@ -448,7 +448,7 @@
         </constraints>
         <properties>
           <background color="-5570596"/>
-          <font name="Goudy Old Style" style="1"/>
+          <font name="Goudy Old Style" size="18" style="1"/>
           <foreground color="-16100280"/>
           <model/>
           <selectionBackground color="-9118745"/>
