@@ -7,7 +7,6 @@ import java.sql.*;
 
 //@SpringBootTest
 class DemoApplicationTests {
-
 	@Test
 	void small() {
 		Assertions.assertEquals(2, 2);
@@ -251,6 +250,86 @@ class DemoApplicationTests {
 			String exceptionName = exception.getClass().getSimpleName();
 			String expectedName = "SQLIntegrityConstraintViolationException";
 			Assertions.assertTrue(exceptionName.equals(expectedName));
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	@Test
+	void check_add_to_day_menu() {
+		String addSql = "Insert into weekly_menu values (1, 1, 1, (select recipe_id from recipe where name like 'Sandwich with jam'))";
+		String selectSql = "Select meal_number from weekly_menu where client_id = 1 and recipe_id = 20 and day_number = 1";
+		String deleteSql = "Delete from weekly_menu where client_id = 1 and meal_number = 1 and day_number = 1 and recipe_id = 1";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+			ResultSet rsAdd = stmt.executeQuery(addSql);
+			ResultSet rsSelect = stmt.executeQuery(selectSql);
+			if (rsSelect.next()) {
+				Assertions.assertEquals(rsSelect.getInt(1), 1);
+				ResultSet rsDelete = stmt.executeQuery(deleteSql);
+			}
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	@Test
+	void check_add_to_day_menu_recipe_not_exist() {
+		String addSql = "Insert into weekly_menu values (1, 1, 1, -1)";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+			Exception exception = Assertions.assertThrows(SQLIntegrityConstraintViolationException.class, () -> {
+				ResultSet rsInsert = stmt.executeQuery(addSql);
+			});
+			String exceptionName = exception.getClass().getSimpleName();
+			String expectedName = "SQLIntegrityConstraintViolationException";
+			Assertions.assertTrue(exceptionName.equals(expectedName));
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	@Test
+	void check_add_to_day_menu_client_not_exist() {
+		String addSql = "Insert into weekly_menu values (-1, 1, 1, 1)";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+			Exception exception = Assertions.assertThrows(SQLIntegrityConstraintViolationException.class, () -> {
+				ResultSet rsInsert = stmt.executeQuery(addSql);
+			});
+			String exceptionName = exception.getClass().getSimpleName();
+			String expectedName = "SQLIntegrityConstraintViolationException";
+			Assertions.assertTrue(exceptionName.equals(expectedName));
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	@Test
+	void check_delete_from_day_menu() {
+		String addSql = "Insert into weekly_menu values (1, 1, 1, (select recipe_id from recipe where name like 'Sandwich with jam'))";
+		String selectSql = "Select meal_number from weekly_menu where client_id = 1 and recipe_id = 20 and day_number = 1";
+		String deleteSql = "Delete from weekly_menu where client_id = 1 and meal_number = 1 and day_number = 1 and recipe_id = 20";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+			ResultSet rsAdd = stmt.executeQuery(addSql);
+			ResultSet rsSelectAdded = stmt.executeQuery(selectSql);
+			if (rsSelectAdded.next()) {
+				Assertions.assertEquals(rsSelectAdded.getInt(1), 1);
+			}
+			ResultSet rsDelete = stmt.executeQuery(deleteSql);
+			ResultSet rsSelectDeleted = stmt.executeQuery(selectSql);
+			if (rsSelectDeleted.next()) {
+				Assertions.fail("Not deleted");
+			}
 		} catch (
 				SQLException ex) {
 			throw new RuntimeException(ex);
