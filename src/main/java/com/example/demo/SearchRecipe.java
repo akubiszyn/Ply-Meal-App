@@ -65,6 +65,7 @@ public class SearchRecipe extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String key_word = enterRecipe.getText();
+//                key_word = StringUtils.;
                 DefaultListModel model = new DefaultListModel();
 //                model.addElement(key_word);
                 String sqlQuery = "select name from recipe where name like '%" + key_word + "%'";
