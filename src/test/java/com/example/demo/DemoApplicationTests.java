@@ -332,7 +332,7 @@ class DemoApplicationTests {
 	}
 
 
-}
+
 
 	@Test
 	void check_add_to_day_menu_client_not_exist() {

@@ -28,13 +28,13 @@
 //        FoodController foodController = new FoodController();
 //        ArrayList<RecipeResponse> recipes = new ArrayList<>();
 ////        , "dumplings", "burger",
-//        ArrayList<String> foods = new ArrayList<String>(Arrays.asList("ravioli"));
+//        ArrayList<String> foods = new ArrayList<String>(Arrays.asList("risotto"));
 //        int idx = 0;
 //        int ingredientId = 420;
 //        for (String food : foods) {
-//            recipes.add(foodController.getRecipe(food, "1"));
+//            recipes.add(foodController.getRecipe(food, "5"));
 //            for (Recipe recipe : recipes.get(idx).getResults()) {
-////                jdbcTemplate.update("INSERT INTO recipe VALUES (?, ?, ?)", recipe.getRecipe_id(), recipe.getName(), recipe.getImage_url());
+//                jdbcTemplate.update("INSERT INTO recipe VALUES (?, ?, ?)", recipe.getRecipe_id(), recipe.getName(), recipe.getImage_url());
 //                Ingredients ingredients = foodController.getRecipeIngredients(recipe);
 //
 //                for (IngredientDescription ingredient : ingredients.getIngredients()) {
@@ -54,9 +54,8 @@
 //                    }
 //                    float amount = ingredient.getAmount().getMetric().getValue();
 //                    String unit = ingredient.getAmount().getMetric().getUnit();
-//                    if (ingredientId > 419) {
-//                        jdbcTemplate.update("INSERT INTO ingredient VALUES (?, ?, ?, ?, ?)", ingredientId, recipe.getRecipe_id(), ingredient.getId(), amount, unit);
-//                    }
+//                    jdbcTemplate.update("INSERT INTO ingredient VALUES (?, ?, ?, ?, ?)", ingredientId, recipe.getRecipe_id(), ingredient.getId(), amount, unit);
+//
 //
 //                    ingredientId++;
 //                }

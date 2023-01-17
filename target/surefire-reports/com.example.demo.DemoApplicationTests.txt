@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.example.demo.DemoApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.47 s - in com.example.demo.DemoApplicationTests
+Tests run: 23, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 14.237 s <<< FAILURE! - in com.example.demo.DemoApplicationTests
+add_user  Time elapsed: 1.12 s  <<< ERROR!
+java.awt.IllegalComponentStateException: contentPane cannot be set to null.
+	at com.example.demo.DemoApplicationTests.add_user(DemoApplicationTests.java:74)
+
