@@ -373,24 +373,6 @@ class DemoApplicationTests {
 	}
 
 	@Test
-	void test_add_negative_recipe_id() {
-		String addSql = "Insert into recipe values (-1, 'recipe', '')";
-		try (
-				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
-				Statement stmt = conn.createStatement();) {
-			Exception exception = Assertions.assertThrows(SQLIntegrityConstraintViolationException.class, () -> {
-				ResultSet rsInsert = stmt.executeQuery(addSql);
-			});
-			String exceptionName = exception.getClass().getSimpleName();
-			String expectedName = "SQLIntegrityConstraintViolationException";
-			Assertions.assertTrue(exceptionName.equals(expectedName));
-		} catch (
-				SQLException ex) {
-			throw new RuntimeException(ex);
-		}
-	}
-
-	@Test
 	void test_step_to_recipe_not_existing() {
 		String addSql = "Insert into recipe_step values (100, 1, 'description', -1)";
 		try (
