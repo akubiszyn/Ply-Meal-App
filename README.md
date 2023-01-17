@@ -17,6 +17,6 @@ Możliwe jest również otworzenie programu w Terminalu. Aby to zrobić należy 
 
 i wpisać komendę:
 
-*java -jar ./demo-0.0.1-SNAPSHOT* 
+*java -jar ./demo-0.0.1-SNAPSHOT.jar* 
 
 Instalacja bazy danych nie jest potrzebna - połączenie odbywa się automatycznie, nie wymaga instalacji Oracle Database.
