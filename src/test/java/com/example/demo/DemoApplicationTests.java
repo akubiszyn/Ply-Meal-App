@@ -335,4 +335,111 @@ class DemoApplicationTests {
 			throw new RuntimeException(ex);
 		}
 	}
+
+	@Test
+	void test_add_fav_client_not_exist() {
+		String addSql = "Insert into fav_recipe values (-1, 100)";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+			Exception exception = Assertions.assertThrows(SQLIntegrityConstraintViolationException.class, () -> {
+				ResultSet rsInsert = stmt.executeQuery(addSql);
+			});
+			String exceptionName = exception.getClass().getSimpleName();
+			String expectedName = "SQLIntegrityConstraintViolationException";
+			Assertions.assertTrue(exceptionName.equals(expectedName));
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	@Test
+	void test_add_fav_recipe_not_exist() {
+		String addSql = "Insert into fav_recipe values (1, -1)";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+			Exception exception = Assertions.assertThrows(SQLIntegrityConstraintViolationException.class, () -> {
+				ResultSet rsInsert = stmt.executeQuery(addSql);
+			});
+			String exceptionName = exception.getClass().getSimpleName();
+			String expectedName = "SQLIntegrityConstraintViolationException";
+			Assertions.assertTrue(exceptionName.equals(expectedName));
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	@Test
+	void test_add_negative_recipe_id() {
+		String addSql = "Insert into recipe values (-1, 'recipe', '')";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+			Exception exception = Assertions.assertThrows(SQLIntegrityConstraintViolationException.class, () -> {
+				ResultSet rsInsert = stmt.executeQuery(addSql);
+			});
+			String exceptionName = exception.getClass().getSimpleName();
+			String expectedName = "SQLIntegrityConstraintViolationException";
+			Assertions.assertTrue(exceptionName.equals(expectedName));
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	@Test
+	void test_step_to_recipe_not_existing() {
+		String addSql = "Insert into recipe_step values (100, 1, 'description', -1)";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+			Exception exception = Assertions.assertThrows(SQLIntegrityConstraintViolationException.class, () -> {
+				ResultSet rsInsert = stmt.executeQuery(addSql);
+			});
+			String exceptionName = exception.getClass().getSimpleName();
+			String expectedName = "SQLIntegrityConstraintViolationException";
+			Assertions.assertTrue(exceptionName.equals(expectedName));
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	@Test
+	void check_add_to_fav_recipe() {
+		int old_quantity=0;
+		int new_quantity=0;
+		String addSql = "Insert into fav_recipe values (1, 654959)";
+		String selectSql = "Select count(*) from fav_recipe where client_id = 1";
+		String deleteSql = "Delete from fav_recipe where client_id = 1 and recipe_id = 654959";
+		try (
+				Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+				Statement stmt = conn.createStatement();) {
+
+			ResultSet rsSelect = stmt.executeQuery(selectSql);
+			if (rsSelect.next()) {
+				old_quantity = rsSelect.getInt(1);
+			}
+
+			ResultSet rsAdd = stmt.executeQuery(addSql);
+			ResultSet rsSelect2 = stmt.executeQuery(selectSql);
+			if (rsSelect2.next()) {
+				new_quantity = rsSelect2.getInt(1);
+			}
+			ResultSet rsDelete = stmt.executeQuery(deleteSql);
+
+			Assertions.assertEquals(old_quantity, new_quantity-1);
+
+		} catch (
+				SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+
+
 }
+
