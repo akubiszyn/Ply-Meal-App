@@ -71,15 +71,17 @@ public class Fridge extends JFrame {
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
+                if (!listModel.contains(foodName)) {
+                    try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
+                         Statement stmt = conn.createStatement();
+                         ResultSet rs2 = stmt.executeQuery("insert into fridge_list columns (item_id, client_id) values (" + itemId + ", " + clientId + ")");) {
+                        listModel.addElement(foodName);
 
-                try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
-                     Statement stmt = conn.createStatement();
-                     ResultSet rs2 = stmt.executeQuery("insert into fridge_list columns (item_id, client_id) values (" + itemId + ", " + clientId + ")");) {
-                    listModel.addElement(foodName);
-
-                } catch (SQLException ex) {
+                    } catch (SQLException ex) {
+                        System.out.println(ex.getMessage());
+                    }
+                } else {
                     ExceptionPopUp exceptionPopUp = new ExceptionPopUp("You've already added this product!");
-                    System.out.println(ex.getMessage());
                 }
 
                 itemList.setModel(listModel);
