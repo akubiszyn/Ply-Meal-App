@@ -1,5 +1,9 @@
 package com.example.demo;
 
+import com.example.demo.Food.FoodController;
+import com.example.demo.Food.ingredient.Ingredient;
+import com.example.demo.Food.recipe.RecipeResponse;
+import com.example.demo.Food.recipe.nutrients.RecipeNutrients;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -12,6 +16,8 @@ class DemoApplicationTests {
 	void small() {
 		Assertions.assertEquals(2, 2);
 	}
+
+
 
 	// --------------- CHECK LOGIN ------------------
 	@Test
@@ -256,4 +262,37 @@ class DemoApplicationTests {
 			throw new RuntimeException(ex);
 		}
 	}
+
+	// --------------- CHECK API CONNECTION ------------------
+	@Test
+	void get_ingredient(){
+		FoodController foodController = new FoodController();
+		Ingredient ingredient = foodController.getIngredient("blackberries", "100", "gram");
+		Assertions.assertTrue(ingredient.getId() == 9042);
+		Assertions.assertTrue(ingredient.getNutrition().getNutrients().get(8).getName().equals("Vitamin K"));
+		Assertions.assertTrue(ingredient.getNutrition().getNutrients().get(8).getAmount() == 19);
+	}
+	@Test
+	void get_recipe(){
+		FoodController foodController = new FoodController();
+		RecipeResponse recipe = foodController.getRecipe("cake", "1");
+		String step = recipe.getResults().get(0).getSteps().get(5).getStep();
+		Assertions.assertTrue(recipe.getResults().size() == 1);
+		Assertions.assertTrue(recipe.getResults().get(0).getName().equals("Cake Balls"));
+		Assertions.assertTrue(recipe.getResults().get(0).getSteps().size() == 10);
+		Assertions.assertTrue(recipe.getResults().get(0).getSteps().get(5).getStep().equals("Place on a lined cookie sheet with wax paper."));
+
+	}
+	@Test
+	void get_recipe_nutrients(){
+		FoodController foodController = new FoodController();
+		RecipeNutrients recipeNutrients = foodController.getRecipeNutrients(654812);
+		Assertions.assertTrue(recipeNutrients.getCalories().equals("557k"));
+		Assertions.assertTrue(recipeNutrients.getCarbs().equals("95g"));
+		Assertions.assertTrue(recipeNutrients.getFat().equals("3g"));
+		Assertions.assertTrue(recipeNutrients.getProtein().equals("40g"));
+
+	}
+
+
 }

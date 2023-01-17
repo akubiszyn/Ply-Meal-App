@@ -4,7 +4,7 @@ import com.example.demo.Food.FoodService;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Ingredient {
-    private int id;
+    private Integer id;
     private String name;
     private String image;
 
@@ -28,7 +28,7 @@ public class Ingredient {
         this.image = image;
         this.nutrition = null;
     }
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

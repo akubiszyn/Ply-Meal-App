@@ -48,6 +48,7 @@ public class FoodService {
         }
         if (response.getResults().size() == 0) {
             ExceptionPopUp exceptionPopUp = new ExceptionPopUp("Invalid name of a product!");
+
         }
         return response.getResults().get(0);
     }

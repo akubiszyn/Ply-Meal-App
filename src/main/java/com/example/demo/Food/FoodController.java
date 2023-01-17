@@ -38,10 +38,10 @@ public class FoodController {
     }
     public static void main(String[] args){
 //        FoodController foodController = new FoodController();
-//        RecipeNutrients nutrients = foodController.getRecipeNutrients(1003464);
+//        RecipeNutrients nutrients = foodController.getRecipeNutrients(654812);
 //       Ingredient ingredient = foodController.getIngredient("blackberries", "100", "gram");
 //        Ingredients ingredients = new Ingredients();
-//        RecipeResponse recipes = foodController.getRecipe("pasta", "4");
+//        RecipeResponse recipes = foodController.getRecipe("cake", "1");
 //        for (int i = 0; i < 4; i++) {
 //            ingredients = foodController.getRecipeIngredients(recipes.getResults().get(2));
 //        }
