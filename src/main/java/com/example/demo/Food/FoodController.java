@@ -36,18 +36,16 @@ public class FoodController {
         RecipeNutrients recipeNutrients = foodService.getRecipeNutrients(id);
         return  recipeNutrients;
     }
-    public static void main(String[] args){
+//    public static void main(String[] args){
 //        FoodController foodController = new FoodController();
 //        RecipeNutrients nutrients = foodController.getRecipeNutrients(654812);
 //       Ingredient ingredient = foodController.getIngredient("blackberries", "100", "gram");
 //        Ingredients ingredients = new Ingredients();
-//        RecipeResponse recipes = foodController.getRecipe("cake", "1");
+//        RecipeResponse recipes = foodController.getRecipe("Lasagne", "5");
 //        for (int i = 0; i < 4; i++) {
 //            ingredients = foodController.getRecipeIngredients(recipes.getResults().get(2));
 //        }
 //        ingredient.getNutrition().getNutrients().forEach(nutrient ->System.out.println(nutrient.getName() + ": " + nutrient.getAmount()));
 //        System.out.println(recipes.getResults().get(0).getSteps().get(3));
-
-
-    }
+//    }
 }

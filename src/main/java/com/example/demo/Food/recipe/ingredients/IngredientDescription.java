@@ -7,7 +7,7 @@ import com.example.demo.Food.ingredient_id.IngredientId;
 public class IngredientDescription {
     private int id;
 
-    private static int foodId = 161;
+    private static int foodId = 166;
 
     public int getId() {
         return id;

@@ -53,19 +53,28 @@ public class Fridge extends JFrame {
                 int itemId = -1;
                 String pattern = enterItem.getText();
                 String foodName = pattern;
+                String pattern2 = "'" + pattern + "'";
                 try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@ora4.ii.pw.edu.pl:1521/pdb1.ii.pw.edu.pl", "sfojt", "sfojt");
                      Statement stmt = conn.createStatement();
-                     ResultSet rs1 = stmt.executeQuery("select item_id from food where name like '%" + pattern + "%'");) {
+                     ResultSet rs1 = stmt.executeQuery("select item_id from food where name like" + pattern2);) {
                     if (rs1.next()) {
                         itemId = rs1.getInt(1);
-                    } else {
-                        FoodController foodController = new FoodController();
-                        Ingredient ingredient = foodController.getIngredient(pattern, "100", "gram");
-                        foodName = ingredient.getName();
-                        itemId = ingredient.getId();
-                        try (ResultSet insertFood = stmt.executeQuery("insert into food values(" + itemId + ", '" + foodName + "')");) {
+                    }
+                    else {
+                        try (ResultSet rs2 = stmt.executeQuery("select item_id from food where name like '%" + pattern + "%'");) {
+                            if (rs2.next()) {
+                                itemId = rs2.getInt(1);
+                            } else {
+                                FoodController foodController = new FoodController();
+                                Ingredient ingredient = foodController.getIngredient(pattern, "100", "gram");
+                                foodName = ingredient.getName();
+                                itemId = ingredient.getId();
+                                try (ResultSet insertFood = stmt.executeQuery("insert into food values(" + itemId + ", '" + foodName + "')");) {
+                                } catch (SQLException ex) {
+                                    throw new RuntimeException(ex);
+                                }
+                            }
                         } catch (SQLException ex) {
-                            throw new RuntimeException(ex);
                         }
                     }
                 } catch (SQLException ex) {
