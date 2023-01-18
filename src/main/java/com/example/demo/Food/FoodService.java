@@ -31,7 +31,7 @@ public class FoodService {
 //    b32dcd69c8324e7c96de4e04aeecd7ea
 //    bade76f63b1d4353bce85c63ca404348
 //    af2b11d819e04bf49ad7ed85bfa8c95a
-    private static final String API_KEY = "apiKey=b32dcd69c8324e7c96de4e04aeecd7ea";
+    private static final String API_KEY = "apiKey=75ea5da8b94e4d0f839c3c3767c9d791";
 
     private final RestTemplate restTemplate = new RestTemplate();
 
